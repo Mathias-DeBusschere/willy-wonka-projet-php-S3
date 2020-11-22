@@ -6,30 +6,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--fonts-->
-        <link rel="stylesheet" type="text/css" href="../css/fontscss/font_definer.css">
+        <link rel="stylesheet" type="text/css" href="css/fontscss/font_definer.css">
 
         <!-- body -->
-        <link rel="stylesheet" media="all" type="text/css" href="../css/bodycss/body_all.css">
-        <link rel="stylesheet" media="all and (min-width: 768px)" type="text/css" href="../css/bodycss/body_viewport-7.css">
-        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="../css/bodycss/body_viewport-9.css">
-        <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="../css/bodycss/body_viewport-12.css">
+        <link rel="stylesheet" media="all" type="text/css" href="css/bodycss/body_all.css">
+        <link rel="stylesheet" media="all and (min-width: 768px)" type="text/css" href="css/bodycss/body_viewport-7.css">
+        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="css/bodycss/body_viewport-9.css">
+        <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="css/bodycss/body_viewport-12.css">
 
         <!-- header -->
-        <link rel="stylesheet" media="all" type="text/css" href="../css/headercss/header_all.css">
-        <link rel="stylesheet" media="all and (min-width: 768px)" type="text/css" href="../css/headercss/header_viewport-7.css">
-        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="../css/headercss/header_viewport-9.css">
-        <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="../css/headercss/header_viewport-12.css">
+        <link rel="stylesheet" media="all" type="text/css" href="css/headercss/header_all.css">
+        <link rel="stylesheet" media="all and (min-width: 768px)" type="text/css" href="css/headercss/header_viewport-7.css">
+        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="css/headercss/header_viewport-9.css">
+        <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="css/headercss/header_viewport-12.css">
 
         <!-- main -->
-        <link rel="stylesheet" media="all" type="text/css" href="../css/indexcss/index_all.css">
-        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="../css/indexcss/index_viewport-4.css">
-        <link rel="stylesheet" media="all and (min-width: 768px)" type="text/css" href="../css/indexcss/index_viewport-7.css">
-        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="../css/indexcss/index_viewport-9.css">
-        <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="../css/indexcss/index_viewport-12.css">
+        <link rel="stylesheet" media="all" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_all.css">
+        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-4.css">
+        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-7.css">
+        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-9.css">
+        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-12.css">
 
         <!-- footer -->
-        <link rel="stylesheet" media="all" type="text/css" href="../css/footercss/footer_all.css">
-        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="../css/footercss/footer_viewport-9.css">
+        <link rel="stylesheet" media="all" type="text/css" href="css/footercss/footer_all.css">
+        <link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="css/footercss/footer_viewport-9.css">
 
     </head>
 

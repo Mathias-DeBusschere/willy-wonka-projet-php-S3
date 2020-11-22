@@ -34,7 +34,7 @@
 //     $pagetitle='Error';
 //     require File::build_path(array("view","view.php"));
 // }
-$view='conditions';
+$view='accueil';
 $pagetitle='Accueil';
 require_once File::build_path(array("view","view.php"));
 

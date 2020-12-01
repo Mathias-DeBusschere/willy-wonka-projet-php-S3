@@ -38,8 +38,8 @@
             <nav class="second_nav">
                     <ul class="second_nav_links">
                         <li><a href="../englishVersion/indexEn.html">In English</a></li>
-                        <li><a href="../connexion.html">Se connecter</a></li>
-                        <li class="cart"><a href="../cart.html">Mon Panier</a></li>
+                        <li><a href="index.php?page=connexion">Se connecter</a></li>
+                        <li class="cart"><a href="index.php?page=cart">Mon Panier</a></li>
                     </ul>
             </nav>
             <div id="nav_logo_container">
@@ -54,7 +54,7 @@
                 <label for="dropdown_menu_mobile2" class="dropdown_menu_overlay2"></label>
 
                 <figure class="logo">
-                    <a href="../index.html"><img src="../images/header/logo.png" alt="logo" /></a>
+                    <a href="index.php"><img src="images/header/logo.png" alt="logo" /></a>
                 </figure>
 
                 <a class="cart" href="../cart.html"> </a>
@@ -64,35 +64,35 @@
                         <li><a href="index.php" class="active">Accueil</a></li>
                         <li class="dropdown_menu_mobile"><label for="dropdown_menu_mobile" class="dropdown_menu_mobile">Chocolats</label>
                             <ul class="main_nav_links dropdown_menu_mobile">
-                                <li class="black_choco"><a href="../chocolateid0000.html">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="../chocolateid0001.html">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="../chocolateid0002.html">Chocolat Blanc</a></li>
+                                <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
+                                <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>
+                                <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown_menu"><a href="../chocolategeneral.html" class="dropdown_menu">Chocolats</a>
+                        <li class="dropdown_menu"><a href="index.php?page=chocolatgeneral" class="dropdown_menu">Chocolats</a>
                             <ul class="main_nav_links dropdown_menu">
-                                <li class="black_choco"><a href="../chocolateid0000.html">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="../chocolateid0001.html">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="../chocolateid0002.html">Chocolat Blanc</a></li>
+                                <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
+                                <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>
+                                <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
                             </ul>
                         </li>
-                        <li><a href="../equipe.html">L'Équipe</a></li>
+                        <li><a href="index.php?page=equipe">L'Équipe</a></li>
                         <li class="dropdown_menu_mobile2"><label for="dropdown_menu_mobile2" class="dropdown_menu_mobile2">Nous Rejoindre</label>
                             <ul class="main_nav_links dropdown_menu_mobile2">
-                                <li><a href="../metier1.html">Chocolatier</a></li>
-                                <li><a href="../metier2.html">Préparateur de commandes</a></li>
-                                <li><a href="../metier3.html">Commercial</a></li>
+                                <li><a href="index.php?page=metier1">Chocolatier</a></li>
+                                <li><a href="index.php?page=metier2">Préparateur de commandes</a></li>
+                                <li><a href="index.php?page=metier3">Commercial</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown_menu2"><a href="../rejoindre.html" class="dropdown_menu2">Nous Rejoindre</a>
+                        <li class="dropdown_menu2"><a href="index.php?page=rejoindre" class="dropdown_menu2">Nous Rejoindre</a>
                             <ul class="main_nav_links dropdown_menu2">
-                                <li><a href="../metier1.html">Chocolatier</a></li>
-                                <li><a href="../metier2.html">Préparateur de commandes</a></li>
-                                <li><a href="../metier3.html">Commercial</a></li>
+                                <li><a href="index.php?page=metier1">Chocolatier</a></li>
+                                <li><a href="index.php?page=metier2">Préparateur de commandes</a></li>
+                                <li><a href="index.php?page=metier3">Commercial</a></li>
                             </ul>
                         </li>
-                        <li class="mobile"><a href="../faq.html">FAQ</a></li>
-                        <li class="desktop"><a href="../faq.html">Foire aux Questions</a></li>
+                        <li class="mobile"><a href="index.php?page=faq">FAQ</a></li>
+                        <li class="desktop"><a href="index.php?page=faq">Foire aux Questions</a></li>
                     </ul>
                 </nav>
             </div>
@@ -134,19 +134,19 @@
                         Rejoignez nous sur:
                     </p>
                     <div class="social_networks_links">
-                        <a href="https://www.facebook.com/"><img src="../images/footer/facebook.png" alt="facebook_icon" class="facebook" /><span class="social_networks_names">Facebook</span></a>
-                        <a href="https://twitter.com/"><img src="../images/footer/twitter.png" alt="twitter_icon" class="twitter" /><span class="social_networks_names">Twitter</span></a>
-                        <a href="https://www.youtube.com/"><img src="../images/footer/youtube.png" alt="youtube_icon" class="youtube" /><span class="social_networks_names">Youtube</span></a>
-                        <a href="https://www.pinterest.fr/"><img src="../images/footer/pinterest.png" alt="pinterest_icon" /><span class="social_networks_names">Pinterest</span></a>
-                        <a href="https://www.linkedin.com/"><img src="../images/footer/linkedin.png" alt="linkedin_icon" /><span class="social_networks_names">Linkedin</span></a>
-                        <a href="https://www.instagram.com/"><img src="../images/footer/instagram.png" alt="instagram_icon" /><span class="social_networks_names">Instagram</span></a>
+                        <a href="https://www.facebook.com/"><img src="images/footer/facebook.png" alt="facebook_icon" class="facebook" /><span class="social_networks_names">Facebook</span></a>
+                        <a href="https://twitter.com/"><img src="images/footer/twitter.png" alt="twitter_icon" class="twitter" /><span class="social_networks_names">Twitter</span></a>
+                        <a href="https://www.youtube.com/"><img src="images/footer/youtube.png" alt="youtube_icon" class="youtube" /><span class="social_networks_names">Youtube</span></a>
+                        <a href="https://www.pinterest.fr/"><img src="images/footer/pinterest.png" alt="pinterest_icon" /><span class="social_networks_names">Pinterest</span></a>
+                        <a href="https://www.linkedin.com/"><img src="images/footer/linkedin.png" alt="linkedin_icon" /><span class="social_networks_names">Linkedin</span></a>
+                        <a href="https://www.instagram.com/"><img src="images/footer/instagram.png" alt="instagram_icon" /><span class="social_networks_names">Instagram</span></a>
                     </div>
                 </div>
             </div>
             <div id="third_footer">
-                <a href="../conditions.html">Conditions d'utilisation</a>
-                <a href="../presse.html">Presse</a>
-                <a href="../contact.html">Contactez-nous</a>
+                <a href="index.php?page=conditions">Conditions d'utilisation</a>
+                <a href="index.php?page=presse">Presse</a>
+                <a href="index.php?page=contact">Contactez-nous</a>
             </div>
             <div id="fourth_footer">
                 <p>© 2019 Chocolate Factory Willy Wonka</p>

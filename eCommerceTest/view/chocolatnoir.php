@@ -42,7 +42,7 @@
 				<h1 class="other_products_title">Autres produits:</h1>
 				<div class="other_products_list">
 					<article class="other_product_article">
-						<a href="chocolateid0001.html">
+						<a href="index.php?page=chocolatlait">
 							<div class="image">
 								<img class="product_img" src="images/products/wonka-bar-lait.jpg" alt="product_image" />
 							</div>
@@ -56,7 +56,7 @@
 							</form>
 					</article>
 					<article class="other_product_article">
-						<a href="chocolateid0002.html">
+						<a href="index.php?page=chocolatblanc">
 							<div class="image">
 								<img class="product_img" src="images/products/wonka-bar-blanc.jpg" alt="product_image" />
 							</div>

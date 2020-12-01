@@ -34,7 +34,14 @@
 //     $pagetitle='Error';
 //     require File::build_path(array("view","view.php"));
 // }
-$view='accueil';
+
+if(isset($_GET['page'])){
+	$page = $_GET['page'];
+}else{
+ 	$page = "accueil";
+}
+
+$view=$page;
 $pagetitle='Accueil';
 require_once File::build_path(array("view","view.php"));
 

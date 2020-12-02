@@ -59,13 +59,39 @@ class Model {
         echo $e->getMessage();
         die();
     }
-    echo 'yoooo';
     if (empty($tab_object)){
         return false;
     }
-    echo 'yoooo';
     return $tab_object[0];
 
+  }
+
+  public function save($data){
+    $table_name = 'p_'.static::$object;
+    $class_name = 'Model'.ucfirst(static::$object);
+    $primary_key = static::$primary;
+
+    $sql = "INSERT INTO $table_name (";
+    foreach ($data as $cle => $valeur) 
+        $sql = $sql . $cle .', ';
+    $sql = rtrim($sql," \t,") . ") VALUES (";
+    foreach ($data as $cle => $valeur) 
+        $sql = $sql .'\''. $valeur .'\', ';
+    $sql = rtrim($sql," \t,") .");";
+
+    try{
+    $req_prep = Model::$pdo->prepare($sql);
+    $req_prep->execute($data);
+
+     } catch(PDOException $e) {
+        if ($e->getCode() == 23000){
+          return false;
+        }else{
+          echo $e->getMessage();
+          return;
+         }
+         return true;
+      }
   }
 
   

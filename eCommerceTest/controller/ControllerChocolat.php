@@ -7,7 +7,7 @@ class ControllerChocolat {
     public static function readAll() {
 
         $tab_chocolat = ModelChocolat::selectAll();     
-        $view='list';
+        $view='chocolatgeneral';
         $pagetitle='Liste des Chocolats';
         require File::build_path(array("view","view.php"));
     }
@@ -25,6 +25,52 @@ class ControllerChocolat {
             $pagetitle='Page Produit';
             require File::build_path(array("view","view.php"));
         }
+    }
+
+    public static function create(){
+        $id = '';
+        $type = '';
+        $nom = '';
+        $prixkilo = '';
+        $masse = '';
+        $image = '';
+        $description = '';
+        $action='created';
+
+        $view='update';
+        $pagetitle='Confection Chocolat';
+        require File::build_path(array("view","view.php"));
+    }
+
+    public static function created(){
+        $data = array(
+        "id" => $_GET['id'],
+        "type" => $_GET['type'],
+        "nom" => $_GET['nom'],
+        "prixkilo" => $_GET['prixkilo'],
+        "masse" => $_GET['masse'],
+        "image" => $_GET['image'],
+        "description" => $_GET['description']);
+
+        $id = $_GET['id'];
+        $type = $_GET['type'];
+        $nom = $_GET['nom'];
+        $prixkilo = $_GET['prixkilo'];
+        $masse = $_GET['masse'];
+        $image = $_GET['image'];
+        $description = $_GET['description'];
+
+        $chocolat = new ModelChocolat($id,$type,$nom,$prixkilo,$masse,$image,$description);
+        $chocolat->save($data);
+        // $view='created';
+        // $pagetitle='Validation Confection';
+        // require File::build_path(array("view","view.php"));
+
+        
+        $view='list';
+        $pagetitle='Liste Chocolats';
+        $tab_chocolat = ModelChocolat::selectAll(); 
+        require File::build_path(array("view","view.php"));
     }
 
     

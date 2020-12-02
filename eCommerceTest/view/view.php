@@ -67,7 +67,7 @@
                                 <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown_menu"><a href="index.php?page=chocolatgeneral" class="dropdown_menu">Chocolats</a>
+                        <li class="dropdown_menu"><a href="index.php?action=readAll" class="dropdown_menu">Chocolats</a>
                             <ul class="main_nav_links dropdown_menu">
                                 <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
                                 <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>

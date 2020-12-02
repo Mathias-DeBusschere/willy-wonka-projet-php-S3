@@ -3,7 +3,7 @@
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/metiercss/metier_all.css">';
     else if ($view == "connexion" || $view == "inscription" || $view == "resetmdp" || $view == "resetedmdp")
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/connexioncss/connexion_all.css">';
-    else if ($view == "chocolatblanc" || $view == "chocolatgeneral" || $view == "chocolatnoir" || $view == "chocolatlait") {
+    else if ($view == "list" || $view == "detail" || $view == "chocolatblanc" || $view == "chocolatgeneral" || $view == "chocolatnoir" || $view == "chocolatlait") {
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/genericproductcss/genericproduct_all.css">';
         echo '<link rel="stylesheet" media="all and (min-width: 992px)" type="text/css" href="css/genericproductcss/genericproduct_viewport-9.css">';
     } else {

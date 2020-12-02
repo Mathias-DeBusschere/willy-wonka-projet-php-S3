@@ -1,21 +1,7 @@
 <?php
 //require_once File::build_path(array("controller","ControllerVoiture.php"));
 //require_once File::build_path(array("controller","ControllerUtilisateur.php"));
-//require_once File::build_path(array("controller","ControllerTrajet.php"));
-
-// On recupère l'action passée dans l'URL
-// if(isset($_GET['action'])){
-// 	$action = $_GET['action'];
-// }else{
-// 	$action = "readAll";
-// }
-
-// if(isset($_GET['controller'])){
-// 	$controller = $_GET['controller'];
-// }else{
-// 	$controller = "voiture";
-// }
-
+require_once File::build_path(array("controller","ControllerChocolat.php"));
 // $controller_class = 'Controller'.ucfirst($controller);
 // $class_methods = get_class_methods('ControllerVoiture');
 
@@ -41,12 +27,20 @@ if(isset($_GET['page'])){
  	$page = "accueil";
 }
 
+if(isset($_GET['action'])){
+	$action = $_GET['action'];
+}else{
+	$action = "readAll";
+}
+
+if(isset($_GET['controller'])){
+ 	$controller = $_GET['controller'];
+}else{
+ 	$controller = "chocolat";
+}
+
 $view=$page;
 $pagetitle='Accueil';
-require_once File::build_path(array("view","view.php"));
-
-// Appel de la méthode statique $action de ControllerVoiture
-
-
-
+//require_once File::build_path(array("view","view.php"));
+ControllerChocolat::read();
 ?>

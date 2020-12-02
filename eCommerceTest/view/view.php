@@ -21,11 +21,9 @@
         <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="css/headercss/header_viewport-12.css">
 
         <!-- main -->
-        <link rel="stylesheet" media="all" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_all.css">
-        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-4.css">
-        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-7.css">
-        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-9.css">
-        <link rel="stylesheet" media="all and (min-width: 480px)" type="text/css" href="css/<?php echo $view; ?>css/<?php echo $view; ?>_viewport-12.css">
+        <?php
+            require FILE::build_path(array("view","css.php"));
+        ?>
 
         <!-- footer -->
         <link rel="stylesheet" media="all" type="text/css" href="css/footercss/footer_all.css">

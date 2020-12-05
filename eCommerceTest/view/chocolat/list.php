@@ -5,7 +5,7 @@ foreach ($tab_chocolat as $chocolat)
 		if($c->getId() != $chocolat->getId()){
 			echo '
 		<article class="other_product_article">
-			<a href="index.php?action=read&id='.rawurlencode($chocolat->getId()).'">
+			<a href="index.php?controller=chocolat&action=read&id='.rawurlencode($chocolat->getId()).'">
 				<div class="image">
 					<img class="product_img" src="'.htmlspecialchars($chocolat->getImage()).'" alt="product_image" />
 				</div>
@@ -23,7 +23,7 @@ foreach ($tab_chocolat as $chocolat)
 	}else{
 		echo '
 		<article class="other_product_article">
-			<a href="index.php?action=read&id='.rawurlencode($chocolat->getId()).'">
+			<a href="index.php?controller=chocolat&action=read&id='.rawurlencode($chocolat->getId()).'">
 				<div class="image">
 					<img class="product_img" src="'.$chocolat->getImage().'" alt="product_image" />
 				</div>
@@ -35,14 +35,14 @@ foreach ($tab_chocolat as $chocolat)
 					<input type="hidden" name="add_one_cart" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>
-				<a href="index.php?action=delete&id='.rawurlencode($chocolat->getId()).'">
+				<a href="index.php?controller=chocolat&action=delete&id='.rawurlencode($chocolat->getId()).'">
 					<img src="images/header/delete.png" alt="delete" style="position: absolute;left: 33px;bottom: 3px;width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;display: flex;justify-content: space-around;align-items: center;">
 				</a>
-				<a href="index.php?action=update&id='.rawurlencode($chocolat->getId()).'">
+				<a href="index.php?controller=chocolat&action=update&id='.rawurlencode($chocolat->getId()).'">
 					<img src="images/header/settings.png" alt="delete" style="position: absolute; left: 3px;bottom: 3px;width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;display: flex;justify-content: space-around;align-items: center;">
 				</a>
 		</article>';
 	}
-	echo '<a href="index.php?action=create"> <h1>Confectionner un nouveau produit</h1></a>';
+	
 ?>
 

@@ -15,13 +15,12 @@ if(isset($_GET['action'])){
 
 if(isset($_GET['controller'])){
  	$controller = $_GET['controller'];
-}else{
- 	$controller = "chocolat";
+ 	$controller_class = 'Controller'.ucfirst($controller);
+	$class_methods = get_class_methods('ControllerVoiture');
 }
 
 
-$controller_class = 'Controller'.ucfirst($controller);
-$class_methods = get_class_methods('ControllerVoiture');
+
 
 // if(class_exists($controller_class)){
 // 	if(in_array($action, $class_methods)){
@@ -38,8 +37,10 @@ $class_methods = get_class_methods('ControllerVoiture');
 //  $pagetitle='Error';
 //  require File::build_path(array("view","view.php"));
 // }
-if(isset($action)){
+if(isset($action) && isset($controller)){
+	echo "$controller_class::$action()";
 	$controller_class::$action();
+	//ControllerChocolat::readAll();
 }else{
 	$view=$page;
 	$pagetitle='Accueil';

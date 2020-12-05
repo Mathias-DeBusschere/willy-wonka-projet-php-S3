@@ -9,7 +9,7 @@
             </article>
             <article class="our_collection size1">
                 <h2 hidden>placeholder</h2>
-                <a href="index.php?page=chocolatgeneral">
+                <a href="index.php?action=readAll&controller=chocolat">
                     <figure>
                         <img src="images/index/chocolat_general.jpeg" alt="Tous nos chocolat" />
                     </figure>

@@ -67,7 +67,7 @@
                                 <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown_menu"><a href="index.php?action=readAll" class="dropdown_menu">Chocolats</a>
+                        <li class="dropdown_menu"><a href="index.php?action=readAll&controller=chocolat" class="dropdown_menu">Chocolats</a>
                             <ul class="main_nav_links dropdown_menu">
                                 <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
                                 <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>
@@ -98,10 +98,11 @@
 
         <main>
 		<?php
-			// Si $controleur='voiture' et $view='list',
-			// alors $filepath="/chemin_du_site/view/voiture/list.php"
-			$filepath = File::build_path(array("view", "$view.php"));
-			require $filepath;
+            if(isset($_GET['controller'])){
+                $controller=$_GET['controller'];}
+            if(isset($controller)){
+            require File::build_path(array("view", $controller, "$view.php"));}
+            else{require File::build_path(array("view", "$view.php"));}
 		?>
     </main>
 

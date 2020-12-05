@@ -38,7 +38,7 @@
 	<div class="other_products_list">
 	<?php
 	$tab_chocolat = ModelChocolat::selectAll();   
-			require File::build_path(array("view","list.php"));
+			require File::build_path(array("view","chocolat","list.php"));
 		?>
 	</div>
 </section>

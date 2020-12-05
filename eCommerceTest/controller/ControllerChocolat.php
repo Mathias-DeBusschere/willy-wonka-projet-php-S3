@@ -29,8 +29,8 @@ class ControllerChocolat {
 
     public static function delete(){
         $id = $_GET['id'];
-        ModelChocolat::delete($id);
         echo "Le chocolat $id vient d'être supprimé !";
+        ModelChocolat::delete($id);
         ControllerChocolat::readAll();
     }
 
@@ -73,11 +73,11 @@ class ControllerChocolat {
         // $pagetitle='Validation Confection';
         // require File::build_path(array("view","view.php"));
 
-        
-        $view='list';
-        $pagetitle='Liste Chocolats';
-        $tab_chocolat = ModelChocolat::selectAll(); 
-        require File::build_path(array("view","view.php"));
+        ControllerChocolat::readAll();
+        // $view='list';
+        // $pagetitle='Liste Chocolats';
+        // $tab_chocolat = ModelChocolat::selectAll(); 
+        // require File::build_path(array("view","view.php"));
     }
 
     

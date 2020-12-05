@@ -13,17 +13,17 @@
     // Getters
     public function getId(){return $this->id;}  
 
-    public function getidProduit(){return $this->tidProduit;}  
+    public function getIdProduit(){return $this->idProduit;}  
 
-    public function getidUtilisateur(){return $this->idUtilisateur;}
+    public function getIdUtilisateur(){return $this->idUtilisateur;}
 
 
     // Setters
     public function setId($id1){$this->id = $id1;}
 
-    public function setidProduit($idProduit){$this->idProduit = $idProduit;}
+    public function setIdProduit($idProduit){$this->idProduit = $idProduit;}
 
-    public function setidUtilisateur($idUtilisateur){$this->idUtilisateur = $idUtilisateur;}
+    public function setIdUtilisateur($idUtilisateur){$this->idUtilisateur = $idUtilisateur;}
 
 
     //Constructeur

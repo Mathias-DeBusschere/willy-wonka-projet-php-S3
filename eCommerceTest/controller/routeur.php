@@ -1,7 +1,6 @@
 <?php
-//require_once File::build_path(array("controller","ControllerVoiture.php"));
-//require_once File::build_path(array("controller","ControllerUtilisateur.php"));
 require_once File::build_path(array("controller","ControllerChocolat.php"));
+require_once File::build_path(array("controller","ControllerCommande.php"));
 
 if(isset($_GET['page'])){
 	$page = $_GET['page'];
@@ -38,9 +37,7 @@ if(isset($_GET['controller'])){
 //  require File::build_path(array("view","view.php"));
 // }
 if(isset($action) && isset($controller)){
-	echo "$controller_class::$action()";
 	$controller_class::$action();
-	//ControllerChocolat::readAll();
 }else{
 	$view=$page;
 	$pagetitle='Accueil';

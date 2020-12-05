@@ -66,6 +66,22 @@ class Model {
 
   }
 
+  public static function delete($primary_value){
+    $table_name = 'p_'.static::$object;
+    $class_name = 'Model'.ucfirst(static::$object);
+    $primary_key = static::$primary;
+
+    $sql = "DELETE FROM $table_name WHERE $primary_key=:nom_tag";
+    try{
+        $req_prep = Model::$pdo->prepare($sql);
+        $values = array("nom_tag" => $primary_value);
+        $req_prep->execute($values);
+     } catch(PDOException $e) {
+        echo $e->getMessage();
+        die();
+    }
+  }
+
   public function save($data){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);

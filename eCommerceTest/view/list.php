@@ -17,6 +17,9 @@ foreach ($tab_chocolat as $chocolat)
 					<input type="hidden" name="add_one_cart" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>
+				<a href="index.php?action=delete&id='.$chocolat->getId().'">
+					<img class="other_product_delete" src="images/header/delete.png" alt="delete" style="position: absolute;left: 3px;bottom: 3px;width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;display: flex;justify-content: space-around;align-items: center;">
+				</a>
 		</article>';}
 	}else{
 		echo '
@@ -33,6 +36,9 @@ foreach ($tab_chocolat as $chocolat)
 					<input type="hidden" name="add_one_cart" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>
+				<a href="index.php?action=delete&id='.$chocolat->getId().'">
+					<img class="other_product_delete" src="images/header/delete.png" alt="delete" style="position: absolute;left: 3px;bottom: 3px;width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;display: flex;justify-content: space-around;align-items: center;">
+				</a>
 		</article>';
 	}
 	

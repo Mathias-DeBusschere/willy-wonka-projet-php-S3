@@ -198,6 +198,19 @@ p.product_price {
 	margin-bottom: 18px;
 }
 
+img.other_product_delete {
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: #888A8588;
+    border-radius: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .other_products .other_products_list .other_product_article .other_product_cart {
 	position: absolute;
 	right: 3px;
@@ -210,6 +223,8 @@ p.product_price {
 	justify-content: space-around;
 	align-items: center;
 }
+
+
 
 .other_products .other_products_list .other_product_article form input[type="number"], .other_products .other_products_list .other_product_article form input[type="text"] {
 	display: none;

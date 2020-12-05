@@ -27,6 +27,13 @@ class ControllerChocolat {
         }
     }
 
+    public static function delete(){
+        $id = $_GET['id'];
+        ModelChocolat::delete($id);
+        echo "Le chocolat $id vient d'être supprimé !";
+        ControllerChocolat::readAll();
+    }
+
     public static function create(){
         $id = '';
         $type = '';

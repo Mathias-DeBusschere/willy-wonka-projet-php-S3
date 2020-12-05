@@ -82,6 +82,29 @@ class Model {
     }
   }
 
+  public function update($data){
+    $table_name = 'p_'.static::$object;
+    $class_name = 'Model'.ucfirst(static::$object);
+    $primary_key = static::$primary;
+
+    $sql =  "UPDATE $table_name SET ";
+    foreach ($data as $cle => $valeur) 
+        $sql = $sql . $cle .'=\''.$valeur.'\', ';
+    $sql = rtrim($sql," \t,") ." WHERE $primary_key ='$data[$primary_key]';";
+    try{
+    $req_prep = Model::$pdo->prepare($sql);  
+    $req_prep->execute($data);
+     } catch(PDOException $e) {
+        if ($e->getCode() == 23000){
+          return false;
+        }else{
+          echo $e->getMessage();
+          return;
+         }
+         return true;
+      }
+  }
+
   public function save($data){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);

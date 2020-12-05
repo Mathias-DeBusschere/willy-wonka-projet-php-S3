@@ -44,6 +44,7 @@ class ControllerChocolat {
         $description = '';
         $action='created';
 
+        $restriction='required';
         $view='update';
         $pagetitle='Confection Chocolat';
         require File::build_path(array("view","view.php"));
@@ -69,15 +70,45 @@ class ControllerChocolat {
 
         $chocolat = new ModelChocolat($id,$type,$nom,$prixkilo,$masse,$image,$description);
         $chocolat->save($data);
-        // $view='created';
-        // $pagetitle='Validation Confection';
-        // require File::build_path(array("view","view.php"));
 
         ControllerChocolat::readAll();
-        // $view='list';
-        // $pagetitle='Liste Chocolats';
-        // $tab_chocolat = ModelChocolat::selectAll(); 
-        // require File::build_path(array("view","view.php"));
+    }
+
+    public static function update(){
+        $id = $_GET['id'];
+        $type = ModelChocolat::select($id)->getType();
+        $nom = ModelChocolat::select($id)->getNom();
+        $prixkilo = ModelChocolat::select($id)->getPrixKilo();
+        $masse = ModelChocolat::select($id)->getMasse();
+        $image = ModelChocolat::select($id)->getImage();
+        $description = ModelChocolat::select($id)->getDescription();
+
+        $restriction='readonly';
+        $action='updated';
+
+        $view='update';
+        $pagetitle='Modification Chocolat';
+        require File::build_path(array("view","view.php"));
+    }
+
+    public static function updated(){
+        $id = $_GET['id'];
+
+
+        $chocolat = ModelChocolat::select($id);
+
+
+        $data = array(
+        "id" => $id,
+        "type" => $_GET['type'],
+        "nom" => $_GET['nom'],
+        "prixkilo" => $_GET['prixkilo'],
+        "masse" => $_GET['masse'],
+        "image" => $_GET['image'],
+        "description" => $_GET['description']);
+        $chocolat->update($data);
+        
+        ControllerChocolat::readAll();
     }
 
     

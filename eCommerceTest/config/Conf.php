@@ -10,10 +10,12 @@
         'database' => 'WillyWonka',
     // A l'IUT, c'est votre login
     // Sur votre machine, vous avez surement un compte 'root'
-        'login' => 'root',
+//        'login' => 'root',
+        'login' => 'debusscherem',
     // A l'IUT, c'est votre mdp (INE par defaut)
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
-        'password' => ''
+//        'password' => ''
+        'password' => '1515900537A'
     );
 
       static public function getLogin() {

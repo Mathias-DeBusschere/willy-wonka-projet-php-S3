@@ -30,7 +30,7 @@ class Model {
         }
     }   
 
-    public function selectAll(){
+    public static function selectAll(){
     $table_name = static::$object;
     $class_name = 'Model'.ucfirst($table_name);
     

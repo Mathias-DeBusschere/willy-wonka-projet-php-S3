@@ -1,7 +1,7 @@
 <h1 id="top_page_title">Connexion</h1>
 <div class="beige_bg form_container">
 	<h2>Connecte toi avec ton email</h2>
-	<form method="post" action="index.html">
+	<form method="post" action="index.php?controller=utilisateur&page=connexion-check">
 		<fieldset class="type_field">
 			<label>
 				<img src="images/connexion/user-icon.png" alt="user_icon" />

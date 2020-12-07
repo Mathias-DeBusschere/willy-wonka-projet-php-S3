@@ -53,7 +53,24 @@ class ModelUtilisateur extends Model {
     }
 
     public static function checkPassword($email,$passwordhache) {
+        $table_name = 'p_'.static::$object;
+        $class_name = 'Model'.ucfirst(static::$object);
 
+        $sql = 'SELECT * FROM '.$table_name .' WHERE email =:email';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array("email" => $email);
+            $req_prep->execute($values);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS,$class_name);
+            $tab_object = $req_prep->fetchAll();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        if (empty($tab_object)){
+            return false;
+        }
+        return $tab_object[0]->password == $passwordhache;
     }
 }
 ?>

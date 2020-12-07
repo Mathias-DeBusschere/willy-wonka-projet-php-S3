@@ -1,7 +1,7 @@
 <?php
     if ($view == "metier1" || $view == "metier2" || $view == "metier3")
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/metiercss/metier_all.css">';
-    else if ($view == "connexion" || $view == "inscription" || $view == "resetmdp" || $view == "resetedmdp" || $view == "insc-check")
+    else if ($view == "connexion" || $view == "inscription" || $view == "resetmdp" || $view == "resetedmdp" || $view == "insc-check" || $view == "connexion-check")
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/connexioncss/connexion_all.css">';
     else if ($view == "list" || $view == "detail" || $view == "chocolatblanc" || $view == "chocolatgeneral" || $view == "chocolatnoir" || $view == "chocolatlait") {
         echo '<link rel="stylesheet" media="all" type="text/css" href="css/genericproductcss/genericproduct_all.css">';

@@ -36,7 +36,7 @@
             <nav class="second_nav">
                     <ul class="second_nav_links">
                         <li><a href="../englishVersion/indexEn.html">In English</a></li>
-                        <li><a href="index.php?page=connexion">Se connecter</a></li>
+                        <li><a href="index.php?page=connexion&controller=utilisateur">Se connecter</a></li>
                         <li class="cart"><a href="index.php?page=cart">Mon Panier</a></li>
                     </ul>
             </nav>
@@ -98,11 +98,12 @@
 
         <main>
 		<?php
-            if(isset($_GET['controller'])){
-                $controller=$_GET['controller'];}
-            if(isset($controller)){
-            require File::build_path(array("view", $controller, "$view.php"));}
-            else{require File::build_path(array("view", "$view.php"));}
+            if(isset($_GET['controller']))
+                $controller=$_GET['controller'];
+            if(isset($controller))
+                require File::build_path(array("view", $controller, "$view.php"));
+            else
+                require File::build_path(array("view", "$view.php"));
 		?>
     </main>
 

@@ -17,6 +17,7 @@
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
 //        'password' => ''
         'password' => '1515900537A'
+//          'password' => 'root'
     );
 
       static public function getLogin() {

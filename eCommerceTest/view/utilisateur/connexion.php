@@ -1,7 +1,7 @@
 <h1 id="top_page_title">Connexion</h1>
 <div class="beige_bg form_container">
 	<h2>Connecte toi avec ton email</h2>
-	<form method="post" action="index.html">
+	<form method="post" action="index.php?controller=utilisateur&page=connexion-check">
 		<fieldset class="type_field">
 			<label>
 				<img src="images/connexion/user-icon.png" alt="user_icon" />
@@ -20,14 +20,14 @@
 				Se souvenir de moi
 			</label>
 		</fieldset>
-		<button type="submit" class="submit">
+		<button type="submit" name="login-submit" class="submit">
 			<img src="images/connexion/lock-icon.png" alt="lock_icon" />
 			Sign In
 		</button>
-		<a href="index.php?page=resetmdp">Mot de pass oublié ?</a>
+		<a href="index.php?page=resetmdp&controller=utilisateur">Mot de pass oublié ?</a>
 	</form>
 	<div class="register">
 		<h3>Nouveau ici ?</h3>
-		<a href="index.php?page=inscription" class="button">Créer un compte</a>
+		<a href="index.php?action=create&controller=utilisateur" class="button">Créer un compte</a>
 	</div>
 </div>

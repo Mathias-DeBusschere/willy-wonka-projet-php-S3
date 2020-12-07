@@ -42,29 +42,29 @@ class Model {
     }
 
     public static function select($primary_value) {
-    $table_name = 'p_'.static::$object;
-    $class_name = 'Model'.ucfirst(static::$object);
-    $primary_key = static::$primary;
+        $table_name = 'p_'.static::$object;
+        $class_name = 'Model'.ucfirst(static::$object);
+        $primary_key = static::$primary;
 
-    $sql = 'SELECT * FROM '.$table_name .' WHERE '. $primary_key. '=:nom_tag';
-    //echo $sql;
-    //echo $primary_value;
-    try{
-        $req_prep = Model::$pdo->prepare($sql);
-        $values = array("nom_tag" => $primary_value);
-        $req_prep->execute($values);
-        $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
-        $tab_object = $req_prep->fetchAll();
-    } catch(PDOException $e) {
-        echo $e->getMessage();
-        die();
-    }
-    if (empty($tab_object)){
-        return false;
-    }
-    return $tab_object[0];
+        $sql = 'SELECT * FROM '.$table_name .' WHERE '. $primary_key. '=:nom_tag';
+        //echo $sql;
+        //echo $primary_value;
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array("nom_tag" => $primary_value);
+            $req_prep->execute($values);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+            $tab_object = $req_prep->fetchAll();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        if (empty($tab_object)){
+            return false;
+        }
+        return $tab_object[0];
 
-  }
+    }
 
   public static function delete($primary_value){
     $table_name = 'p_'.static::$object;
@@ -82,7 +82,7 @@ class Model {
     }
   }
 
-  public function update($data){
+  public static function update($data){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);
     $primary_key = static::$primary;
@@ -105,7 +105,7 @@ class Model {
       }
   }
 
-  public function save($data){
+  public static function save($data){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);
     $primary_key = static::$primary;
@@ -115,7 +115,7 @@ class Model {
         $sql = $sql . $cle .', ';
     $sql = rtrim($sql," \t,") . ") VALUES (";
     foreach ($data as $cle => $valeur) 
-        $sql = $sql .'\''. $valeur .'\', ';
+        $sql = $sql .':'. $cle .', ';
     $sql = rtrim($sql," \t,") .");";
 
     try{

@@ -1,5 +1,5 @@
 <?php
-require_once (File::build_path(array("Model","ModelUtilisateur.php")));
+require_once (File::build_path(array("model","ModelUtilisateur.php")));
 
 class ControllerUtilisateur {
     protected static $object='utilisateur';

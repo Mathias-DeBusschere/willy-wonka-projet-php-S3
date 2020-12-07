@@ -50,13 +50,13 @@
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd" placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />	
+							<input type="password" name="pwd" placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" /*pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"*/ maxlength="32" required />	
 						</label>
 					</fieldset>
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd-repeat" placeholder="Vérifié Mot de passe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />
+							<input type="password" name="pwd-repeat" placeholder="Vérifié Mot de passe" /*pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"*/ maxlength="32" required />
 						</label>
 					</fieldset>
                     <input type='hidden' name='action' value='insc-check' >

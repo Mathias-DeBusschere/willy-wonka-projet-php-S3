@@ -9,12 +9,8 @@ echo '
       <input value = "'. htmlspecialchars($id) .'" type="text" placeholder="Ex : 1" name="id" id="id" '.$restriction.'/>
     </p>
     <p>
-      <label for="idProduit">idProduit</label> :
-      <input value = "'. htmlspecialchars($idProduit) .'" type="text" placeholder="Ex : Wonka Bar" name="idProduit" id="idProduit" required/>
-    </p>
-    <p>
       <label for="idUtilisateur">idUtilisateur</label> :
-      <input value = "'. htmlspecialchars($idUtilisateur) .'"  type="text" placeholder="Ex : Chocolat au Lait" name="idUtilisateur" id="idUtilisateur" required/>
+      <input value = "'. htmlspecialchars($idUtilisateur) .'"  type="text" placeholder="Ex : 1" name="idUtilisateur" id="idUtilisateur" required/>
     </p>
     <p>
       <input type="submit" value="Envoyer" />

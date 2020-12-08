@@ -2,6 +2,7 @@
 require_once File::build_path(array("controller","ControllerChocolat.php"));
 require_once File::build_path(array("controller","ControllerCommande.php"));
 require_once File::build_path(array("controller","ControllerUtilisateur.php"));
+require_once File::build_path(array("controller","ControllerContenu.php"));
 
 if(isset($_GET['page'])){
 	$page = $_GET['page'];

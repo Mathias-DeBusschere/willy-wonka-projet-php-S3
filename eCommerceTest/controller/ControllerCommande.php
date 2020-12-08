@@ -21,12 +21,11 @@ class ControllerCommande {
 
     public static function create(){
         $id = '';
-        $idProduit = '';
         $idUtilisateur = '';
         
 
         $action='created';
-        $restriction='required';
+        $restriction='';
         $view='update';
         $pagetitle='Création commande';
         require File::build_path(array("view","view.php"));
@@ -34,16 +33,16 @@ class ControllerCommande {
 
 
     public static function created(){
-        $data = array(
-        "id" => $_GET['id'],
-        "idProduit" => $_GET['idProduit'],
-        "idUtilisateur" => $_GET['idUtilisateur']);
-
         $id = $_GET['id'];
-        $idProduit = $_GET['idProduit'];
         $idUtilisateur = $_GET['idUtilisateur'];
 
-        $commande = new ModelCommande($id,$idProduit,$idUtilisateur);
+        $data = array(
+        "id" => "null",
+        "idUtilisateur" => $idUtilisateur);
+
+        
+
+        $commande = new ModelCommande($id,$idUtilisateur);
         $commande->save($data);
 
         ControllerCommande::readAll();
@@ -51,7 +50,6 @@ class ControllerCommande {
 
     public static function update(){
         $id = $_GET['id'];
-        $idProduit = ModelCommande::select($id)->getIdProduit();
         $idUtilisateur = ModelCommande::select($id)->getIdUtilisateur();
 
         $restriction='readonly';
@@ -68,7 +66,7 @@ class ControllerCommande {
 
         $commande = ModelCommande::select($id);
         $data = array(
-        "id" => $_GET['id'],
+        "id" => $id,
         "idProduit" => $_GET['idProduit'],
         "idUtilisateur" => $_GET['idUtilisateur']);
 

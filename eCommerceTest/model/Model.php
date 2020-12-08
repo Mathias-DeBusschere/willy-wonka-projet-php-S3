@@ -66,6 +66,10 @@ class Model {
 
     }
 
+    public static function selectContenu($primary_value1,$primary_value2) {}
+
+    public static function deleteContenu($primary_value1,$primary_value2){}
+
   public static function delete($primary_value){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);
@@ -108,7 +112,7 @@ class Model {
   public static function save($data){
     $table_name = 'p_'.static::$object;
     $class_name = 'Model'.ucfirst(static::$object);
-    $primary_key = static::$primary;
+    //$primary_key = static::$primary;
 
     $sql = "INSERT INTO $table_name (";
     foreach ($data as $cle => $valeur) 

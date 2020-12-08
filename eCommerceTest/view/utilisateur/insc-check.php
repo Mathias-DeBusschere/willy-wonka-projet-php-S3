@@ -46,11 +46,12 @@
             );
             ControllerUtilisateur::created($data);
 
-//            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n ". $_SERVER["SERVER_NAME"].$_SERVER["PATH_INFO"];
-//            $msg = wordwrap($msg, 70);
+            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n ". $_SERVER["SERVER_NAME"].$_SERVER["PATH_INFO"];
+            $msg = wordwrap($msg, 70);
 //            print ($msg);
 
-//            mail($email, "Validation de votre compte Willy Wonka", $msg);  version normal
+            mail("bob@yopmail.com", "Validation de votre compte Willy Wonka", $msg);  // version bob.yopmail.fr 
+//            mail($email, "Validation de votre compte Willy Wonka", $msg);  // version normal
 
 
         }

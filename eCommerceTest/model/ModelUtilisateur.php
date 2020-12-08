@@ -5,6 +5,7 @@ class ModelUtilisateur extends Model {
     protected static $object = 'utilisateur';
     protected static $primary ='email';
 
+    private $id;
     private $prenom;
     private $nom;
     private $gender;
@@ -14,6 +15,8 @@ class ModelUtilisateur extends Model {
 
 
     // Getters
+    public function getId(){return $this->id;}
+
     public function getPrenom(){return $this->prenom;}
 
     public function getNom(){return $this->nom;}
@@ -27,6 +30,8 @@ class ModelUtilisateur extends Model {
     public function getAdmin(){return $this->admin;}
 
     // Setters
+    public function setId($id){$this->id = $id;}
+
     public function setPrenom($prenom){$this->prenom = $prenom;}
 
     public function setNom($nom){$this->nom = $nom;}
@@ -41,8 +46,9 @@ class ModelUtilisateur extends Model {
 
 
     //Constructeur
-    public function __construct($prenom = NULL, $nom = NULL, $gender = NULL, $email = NULL, $password = NULL, $admin = NULL) {
-        if (!is_null($prenom) && !is_null($nom) && !is_null($gender) && !is_null($email) && !is_null($password) && !is_null($admin)) {
+    public function __construct($id = NULL, $prenom = NULL, $nom = NULL, $gender = NULL, $email = NULL, $password = NULL, $admin = NULL) {
+        if (!is_null($id) && !is_null($prenom) && !is_null($nom) && !is_null($gender) && !is_null($email) && !is_null($password) && !is_null($admin)) {
+	    $this->id = $id;
             $this->prenom = $prenom;
             $this->nom = $nom;
             $this->gender = $gender;

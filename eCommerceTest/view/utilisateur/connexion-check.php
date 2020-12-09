@@ -20,6 +20,10 @@
             $_SESSION['idUser'] = ModelUtilisateur::selectByEmail($email)->getId();
             $_SESSION['emailUser'] = $email;
             $_SESSION['isAdmin'] = ModelUtilisateur::selectByEmail($email)->getAdmin();
+	    
+	    if (isset($_POST["remember_me"]) && $_POST["remember_me"] == "on") {
+		
+	    }
             header ("Location: index.php");
         } else {
             require File::build_path(array("view","utilisateur","connexion.php"));

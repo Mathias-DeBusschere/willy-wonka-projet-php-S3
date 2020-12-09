@@ -34,8 +34,8 @@ if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action'
 		    $pagetitle='Oups :(';
 		    require File::build_path(array("view","view.php"));
 		}
-	}elseif (isset($_GET["view"])) {
-		$view = $_GET["view"];
+	}elseif (isset($_GET["page"])) {
+		$view = $_GET["page"];
 		require_once File::build_path(array("view","view.php"));
 	}else{
 		$controller='error';

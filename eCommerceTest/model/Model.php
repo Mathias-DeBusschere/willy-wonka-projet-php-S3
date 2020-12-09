@@ -93,7 +93,7 @@ class Model {
 
     $sql =  "UPDATE $table_name SET ";
     foreach ($data as $cle => $valeur) 
-        $sql = $sql . $cle .'=\''.$valeur.'\', ';
+        $sql = $sql . $cle .'=:'.$cle.', ';
     $sql = rtrim($sql," \t,") ." WHERE $primary_key ='$data[$primary_key]';";
     try{
     $req_prep = Model::$pdo->prepare($sql);  

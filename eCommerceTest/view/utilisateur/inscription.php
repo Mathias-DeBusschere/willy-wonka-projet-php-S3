@@ -62,7 +62,7 @@
 							<input type="password" name="pwd-repeat" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd_repeat))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Vérifié Mot de passe" /*pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"*/ maxlength="32" required />
 						</label>
 					</fieldset>
-                    <input type='hidden' name='action' value='insc-check' >
+                    <input type='hidden' name='page' value='insc-check' >
                     <input type='hidden' name='controller' value='utilisateur'>
 					<button type="submit" name="signup-submit" class="submit">
 						Créer un compte

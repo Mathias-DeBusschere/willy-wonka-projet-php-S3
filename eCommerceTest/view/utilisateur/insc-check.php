@@ -45,8 +45,8 @@
             );
             ControllerUtilisateur::created($data);
 
-            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n ".
-                $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"]."?action=validation&nonce=".$nonce."&id=".ModelUtilisateur::selectByEmail($email)->getID();
+	    $link = $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"]."?controller=utilisateur&page=insc-validation&validation=true&nonce=".$nonce."&id=".ModelUtilisateur::selectByEmail($email)->getID();
+            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n <a href=\"".$link."\">".$link."</a>";
             $msg = wordwrap($msg, 70);
 //            print ($msg);
 

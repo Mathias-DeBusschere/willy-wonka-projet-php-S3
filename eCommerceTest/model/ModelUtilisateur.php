@@ -104,5 +104,27 @@ class ModelUtilisateur extends Model {
         }
         return $tab_object[0];
     }
+
+    public static function validate($id) {
+        $table_name = 'p_'.static::$object;
+        $class_name = 'Model'.ucfirst(static::$object);
+
+	$sql = "UPDATE $table_name SET nonce=NULL\n". "WHERE id=:nom_tag";
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array("nom_tag" => $id);
+            $req_prep->execute($values);
+        } catch(PDOException $e) {
+     } catch(PDOException $e) {
+        if ($e->getCode() == 23000){
+          return false;
+        }else{
+          echo $e->getMessage();
+          return;
+         }
+         return true;
+      }
+    }
+
 }
 ?>

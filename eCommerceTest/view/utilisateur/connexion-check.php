@@ -17,8 +17,9 @@
             require File::build_path(array("view","utilisateur","connexion.php"));
             exit();
         } else if (ModelUtilisateur::checkPassword($email,$hashedPwd)){
-            $_SESSION['idUser'] == ModelUtilisateur::selectByEmail($email)->getId();
-            $_SESSION['emailUser'] == $email;
+            $_SESSION['idUser'] = ModelUtilisateur::selectByEmail($email)->getId();
+            $_SESSION['emailUser'] = $email;
+	    echo "<p> Vous êtes connecté, retourner à <a href=\"index.php\">l'accueil</a></p>";
         } else {
             require File::build_path(array("view","utilisateur","connexion.php"));
             exit();

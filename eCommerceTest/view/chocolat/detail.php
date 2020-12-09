@@ -1,6 +1,5 @@
 
 <section class="page_product">
-	<h2 hidden>placholder</h2>
 	<article class="product">
 		<div class="image">
 			<img class="product_img" src="<?php echo $c->getImage() ?>" alt="product_image" />
@@ -16,7 +15,7 @@
 				<?php echo htmlspecialchars($c->getDescription()) ?>
 			</p>
 			<form action="cart.html" method="post" class="add_cart">
-				<input type="hidden" name="item_id" value="0002" />
+				<input type="hidden" name="idChocolat" value="<?php echo $c->getId(); ?>" />
 				<input type="number" name="quantity" min="1" value="1" required class="quantity" />
 				<input type="submit" name="submit" value="Ajouter au panier" class="submit_to_cart">
 			</form>

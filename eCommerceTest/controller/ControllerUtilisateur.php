@@ -55,33 +55,31 @@ class ControllerUtilisateur {
         $controller = 'utilisateur';
         $view = 'insc-validation';
         $pagetitle = 'Inscription complète';
-	require (File::build_path(array("view","view.php")));
+        require (File::build_path(array("view","view.php")));
     }
 
     public static function connexion() {
-	$controller = 'utilisateur';
-	$view = 'connexion';
-	$pagetitle = 'Connexion';
-	require (File::build_path(array("view","view.php")));
+        $controller = 'utilisateur';
+        $view = 'connexion';
+        $pagetitle = 'Connexion';
+        require (File::build_path(array("view","view.php")));
     }
 
     public static function connecting() {
-	$controller = 'utilisateur';
-	$view = 'connexion';
-	$pagetitle = 'Connexion';
-	require (File::build_path(array("view","utilisateur","connexion-check.php")));
-	require (File::build_path(array("view","view.php")));
+        $controller = 'utilisateur';
+        $view = 'connexion';
+        $pagetitle = 'Connexion';
+        require (File::build_path(array("view","utilisateur","connexion-check.php")));
+        require (File::build_path(array("view","view.php")));
     }
 
     public static function connected() {
-	require (File::build_path(array("view","view.php")));
+        require (File::build_path(array("view","view.php")));
     }
 
     public static function deconnexion() {
-	$controller = 'utilisateur';
-	$view = 'deconnexion';
-	$pagetitle = 'Connexion';
-	require (File::build_path(array("view","view.php")));
+        require (File::build_path(array("view","utilisateur","deconnexion.php")));
+        require (File::build_path(array("view","view.php")));
     }
 
 

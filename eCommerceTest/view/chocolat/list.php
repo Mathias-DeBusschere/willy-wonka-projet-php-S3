@@ -11,9 +11,11 @@ foreach ($tab_chocolat as $chocolat) {
 				<h2><span class="wonka_font">' . htmlspecialchars($chocolat->getType()) . '</span> - ' . htmlspecialchars($chocolat->getNom()) . ' - ' . htmlspecialchars($chocolat->getMasse()) . 'g </h2>
 				<p class="product_price">' . htmlspecialchars($chocolat->getPrixKilo() * ($chocolat->getMasse() / 1000)) . '€</p>
 			</a>
-				<form action="cart.html" method="post" class="other_product_cart">
+				<form action="index.php" method="post" class="other_product_cart">
 					<input type="hidden" name="idChocolat" value="'.$c->getId().'" />
-					<input type="hidden" name="add_one_cart" class="add_one_cart" value="1" />
+                	<input type="hidden" name="action" value="addToCart">
+                	<input type="hidden" name="controller" value="chocolat">
+					<input type="number" hidden name="quantity" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>
 
@@ -30,10 +32,11 @@ foreach ($tab_chocolat as $chocolat) {
 				<h2><span class="wonka_font">' . htmlspecialchars($chocolat->getType()) . '</span> - ' . htmlspecialchars($chocolat->getNom()) . ' - ' . htmlspecialchars($chocolat->getMasse()) . 'g </h2>
 				<p class="product_price">' . htmlspecialchars($chocolat->getPrixKilo() * ($chocolat->getMasse() / 1000)) . '€</p>
 			</a>
-				<form action="cart.html" method="post" class="other_product_cart">
+				<form action="index.php" method="post" class="other_product_cart">
 					<input type="hidden" name="idChocolat" value="'.$chocolat->getId().'" />
-					<input type="hidden" name="item_id" value="0000" />
-					<input type="hidden" name="add_one_cart" class="add_one_cart" value="1" />
+                	<input type="hidden" name="action" value="addToCart">
+                	<input type="hidden" name="controller" value="chocolat">
+					<input type="number" hidden name="quantity" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>';
 				if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {

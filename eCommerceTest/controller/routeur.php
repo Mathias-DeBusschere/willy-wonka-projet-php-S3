@@ -34,12 +34,17 @@ if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action'
 		    $pagetitle='Oups :(';
 		    require File::build_path(array("view","view.php"));
 		}
+	}elseif (isset($_GET["view"])) {
+		$view = $_GET["view"];
+		require_once File::build_path(array("view","view.php"));
 	}else{
 		$controller='error';
 		$view='errorcontroller';
 		$pagetitle='Oups :(';
 		require File::build_path(array("view","view.php"));
 	}
+
+
 }else{
 	if(isset($_GET['page'])){
 		$page = $_GET['page'];

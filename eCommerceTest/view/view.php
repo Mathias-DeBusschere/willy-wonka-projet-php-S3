@@ -33,12 +33,12 @@
         <header>
             <nav class="second_nav">
                     <ul class="second_nav_links">
-                        <li><a href="../englishVersion/indexEn.html">In English</a></li>
+                        <li><a href="index.php?page=wip">In English</a></li>
                         <?php
                             if (isset($_SESSION["idUser"])) {
-                                echo "<li><a href=\"index.php?page=deconnexion&controller=utilisateur\">Déconnexion</a></li>";
+                                echo "<li><a href=\"index.php?action=deconnexion&controller=utilisateur\">Déconnexion</a></li>";
                             } else {
-                                echo "<li><a href=\"index.php?page=connexion&controller=utilisateur\">Se connecter</a></li>";
+                                echo "<li><a href=\"index.php?action=connexion&controller=utilisateur\">Se connecter</a></li>";
                             }
                         ?>
                         <li class="cart"><a href="index.php?page=cart">Mon Panier</a></li>
@@ -66,16 +66,16 @@
                         <li><a href="index.php" class="active">Accueil</a></li>
                         <li class="dropdown_menu_mobile"><label for="dropdown_menu_mobile" class="dropdown_menu_mobile">Chocolats</label>
                             <ul class="main_nav_links dropdown_menu_mobile">
-                                <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
+                                <li class="black_choco"><a href="index.php?page=wip">Chocolat Noir</a></li>
+                                <li class="milk_choco"><a href="index.php?page=wip">Chocolat au Lait</a></li>
+                                <li class="white_choco"><a href="index.php?page=wip">Chocolat Blanc</a></li>
                             </ul>
                         </li>
                         <li class="dropdown_menu"><a href="index.php?action=readAll&controller=chocolat" class="dropdown_menu">Chocolats</a>
                             <ul class="main_nav_links dropdown_menu">
-                                <li class="black_choco"><a href="index.php?page=chocolatnoir">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="index.php?page=chocolatlait">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="index.php?page=chocolatblanc">Chocolat Blanc</a></li>
+                                <li class="black_choco"><a href="index.php?page=wip">Chocolat Noir</a></li>
+                                <li class="milk_choco"><a href="index.php?page=wip">Chocolat au Lait</a></li>
+                                <li class="white_choco"><a href="index.php?page=wip">Chocolat Blanc</a></li>
                             </ul>
                         </li>
                         <li><a href="index.php?page=equipe">L'Équipe</a></li>
@@ -102,8 +102,8 @@
 
         <main>
 		<?php
-            if(isset($_GET['controller']))
-                $controller=$_GET['controller'];
+            
+
             if(isset($controller))
                 require File::build_path(array("view", $controller, "$view.php"));
             else

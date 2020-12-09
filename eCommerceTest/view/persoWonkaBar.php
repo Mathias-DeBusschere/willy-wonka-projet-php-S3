@@ -4,7 +4,7 @@
 				<h2 hidden>placeholder</h2>
 				<img src="images/prenom_bar.png" alt="bar prenom">
 
-				<form action="infosPersoWonkaBar.php" method="post">
+				<form action="index.php?page=wip" method="post">
 					<div>
 						<label for="surname">Saisis ton prénom<img src="images/info.png" alt="i d'information" id="info" title="Max. 10 caractéres, utilisez des majuscules afin de faire appraitre des chapeaux"> :</label>
 						<input id="surname" name="uname" type="text" placeholder="Ex : Albert" maxlength="10"  required>

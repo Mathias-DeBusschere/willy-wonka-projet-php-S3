@@ -7,10 +7,6 @@ echo '
   
   <fieldset>
     <p>
-      <label for="id">Identifiant</label> :
-      <input value = "'. htmlspecialchars($id) .'" type="text" placeholder="Ex : 1" name="id" id="id" '.$restriction.'/>
-    </p>
-    <p>
       <label for="type">Type de produit</label> :
       <input value = "'. htmlspecialchars($type) .'" type="text" placeholder="Ex : Wonka Bar" name="type" id="type" required/>
     </p>

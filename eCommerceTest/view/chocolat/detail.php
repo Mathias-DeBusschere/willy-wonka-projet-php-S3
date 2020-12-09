@@ -6,14 +6,14 @@
 			<img class="product_img" src="<?php echo $c->getImage() ?>" alt="product_image" />
 		</div>
 		<div class="details">
-			<h2><span class="wonka_font"><?php echo $c->getType() ?></span> <?php echo $c->getMasse() ?>g <?php echo $c->getNom() ?></h2>
+			<h2><span class="wonka_font"><?php echo htmlspecialchars($c->getType()) ?></span> <?php echo htmlspecialchars($c->getMasse()) ?>g <?php echo htmlspecialchars($c->getNom()) ?></h2>
 			<p class="detailed_info">
-				<?php echo $c->getMasse() ?> g<br />
-				<?php echo $c->getPrixKilo() ?> €/KG
+				<?php echo htmlspecialchars($c->getMasse()) ?> g<br />
+				<?php echo htmlspecialchars($c->getPrixKilo()) ?> €/KG
 			</p>
-			<h2 class="product_price"><?php echo $c->getPrixKilo()*($c->getMasse()/1000) ?>€</h2>
+			<h2 class="product_price"><?php echo htmlspecialchars($c->getPrixKilo()*($c->getMasse()/1000)) ?>€</h2>
 			<p class="product_desc">
-				<?php echo $c->getDescription() ?>
+				<?php echo htmlspecialchars($c->getDescription()) ?>
 			</p>
 			<form action="cart.html" method="post" class="add_cart">
 				<input type="hidden" name="item_id" value="0002" />

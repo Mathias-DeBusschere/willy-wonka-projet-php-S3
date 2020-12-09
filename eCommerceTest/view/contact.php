@@ -1,7 +1,7 @@
 
 			<h1 id="top_page_title"> Contact</h1>
 
-			<form action="infoscontact.php" method="post">
+			<form action="index.php?page=wip" method="post">
 
 
 				<fieldset><h2>Informations personnelles</h2>

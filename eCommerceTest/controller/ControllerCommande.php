@@ -9,6 +9,7 @@ class ControllerCommande {
         $tab_commande = ModelCommande::selectAll();         
         $view='commandegeneral';
         $pagetitle='Liste des Commandes';
+        $controller='commande';
         require File::build_path(array("view","view.php"));
     }
 
@@ -23,6 +24,7 @@ class ControllerCommande {
         }else{
             $view='detail';
             $pagetitle='Détails commande';
+            $controller='commande';
             require File::build_path(array("view","view.php"));
         }
     }
@@ -43,6 +45,7 @@ class ControllerCommande {
         $restriction='';
         $view='update';
         $pagetitle='Création commande';
+        $controller='commande';
         require File::build_path(array("view","view.php"));
     }
 
@@ -52,7 +55,6 @@ class ControllerCommande {
         $idUtilisateur = $_GET['idUtilisateur'];
 
         $data = array(
-        "id" => "null",
         "idUtilisateur" => $idUtilisateur);
 
         
@@ -72,6 +74,7 @@ class ControllerCommande {
 
         $view='update';
         $pagetitle='Modification Commande';
+        $controller='commande';
         require File::build_path(array("view","view.php"));
     }
 

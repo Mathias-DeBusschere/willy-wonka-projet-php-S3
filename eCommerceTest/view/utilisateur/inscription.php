@@ -2,11 +2,11 @@
 			<h1 id="top_page_title">Inscription</h1>
 			<div class="beige_bg form_container">
 				<h2>Créer ton compte avec ton pseudo</h2>
-				<form method="post" action="index.php?controller=utilisateur&page=insc-check">
-                    <?php echo (isset($_POST["error"])? "<li class=\"".$_POST["error"]."\">".(($_POST["error"]=="emptyFields")? "Veuillez remplir tous les champs.":
-                                                                                (($_POST["error"]=="invalidEmail")? "L'addresse email entrer ne respécte pas la forme d'une adresse email classique." :
-                                                                                (($_POST["error"]=="emailAlreadyUsed")? "L'email est déjà associé à un compte, essayez de vous <a href=\"index.php?page=connexion&controller=utilisateur\">connecter</a>.":
-                                                                                (($_POST["error"]=="passwordRepeat")? "Les mot de passe ne sont pas identiques." :"")))): "")."</li>";?>
+				<form method="post" action="index.php">
+                    <?php echo (isset($_POST["error"])? "<li class=\"".$_POST["error"]."\">".(($_POST["error"]=="emptyFields")? "Veuillez remplir tous les champs.</li>":
+                                                                                (($_POST["error"]=="invalidEmail")? "L'addresse email entrer ne respécte pas la forme d'une adresse email classique.</li>" :
+                                                                                (($_POST["error"]=="emailAlreadyUsed")? "L'email est déjà associé à un compte, essayez de vous <a href=\"index.php?page=connexion&controller=utilisateur\">connecter</a>.</li>":
+                                                                                (($_POST["error"]=="passwordRepeat")? "Les mot de passe ne sont pas identiques.</li>" :"")))): "");?>
                     <div class="nom_prenom">
                         <fieldset class="type_field">
                             <label>
@@ -53,16 +53,16 @@
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" /*pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"*/ maxlength="32" required />
+							<input type="password" name="pwd" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />
 						</label>
 					</fieldset>
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd-repeat" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd_repeat))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Vérifié Mot de passe" /*pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"*/ maxlength="32" required />
+							<input type="password" name="pwd-repeat" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd_repeat))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Vérifié Mot de passe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />
 						</label>
 					</fieldset>
-                    <input type='hidden' name='page' value='insc-check' >
+                    <input type='hidden' name='action' value='creating' >
                     <input type='hidden' name='controller' value='utilisateur'>
 					<button type="submit" name="signup-submit" class="submit">
 						Créer un compte

@@ -9,6 +9,7 @@ class ControllerContenu {
         $tab_contenu = ModelContenu::selectAll();         
         $view='contenugeneral';
         $pagetitle='Liste des Contenus';
+        $controller='contenu';
         require File::build_path(array("view","view.php"));
     }
 
@@ -30,6 +31,7 @@ class ControllerContenu {
         $restriction='required';
         $view='update';
         $pagetitle='Création contenu';
+        $controller='contenu';
         require File::build_path(array("view","view.php"));
     }
 
@@ -62,6 +64,7 @@ class ControllerContenu {
 
         $view='update';
         $pagetitle='Modification Contenu';
+        $controller='contenu';
         require File::build_path(array("view","view.php"));
     }
 

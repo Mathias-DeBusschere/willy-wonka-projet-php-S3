@@ -9,6 +9,7 @@ class ControllerChocolat {
         $tab_chocolat = ModelChocolat::selectAll();     
         $view='chocolatgeneral';
         $pagetitle='Liste des Chocolats';
+        $controller='chocolat';
         require File::build_path(array("view","view.php"));
     }
 
@@ -17,12 +18,14 @@ class ControllerChocolat {
         $chocolat = $_GET['id'];
         $c = ModelChocolat::select($chocolat);
         if ($c == null){
-            //$view='error';
-            //$pagetitle='Error';
-            //require File::build_path(array("view","view.php"));
+            $controller='error';
+            $view='errorgeneral';
+            $pagetitle='Oups :(';
+            require File::build_path(array("view","view.php"));
         }else{
             $view='detail';
             $pagetitle='Page Produit';
+            $controller='chocolat';
             require File::build_path(array("view","view.php"));
         }
     }
@@ -35,7 +38,6 @@ class ControllerChocolat {
     }
 
     public static function create(){
-        $id = '';
         $type = '';
         $nom = '';
         $prixkilo = '';
@@ -47,12 +49,12 @@ class ControllerChocolat {
         $restriction='required';
         $view='update';
         $pagetitle='Confection Chocolat';
+        $controller='chocolat';
         require File::build_path(array("view","view.php"));
     }
 
     public static function created(){
         $data = array(
-        "id" => $_GET['id'],
         "type" => $_GET['type'],
         "nom" => $_GET['nom'],
         "prixkilo" => $_GET['prixkilo'],
@@ -60,16 +62,7 @@ class ControllerChocolat {
         "image" => $_GET['image'],
         "description" => $_GET['description']);
 
-        $id = $_GET['id'];
-        $type = $_GET['type'];
-        $nom = $_GET['nom'];
-        $prixkilo = $_GET['prixkilo'];
-        $masse = $_GET['masse'];
-        $image = $_GET['image'];
-        $description = $_GET['description'];
-
-        $chocolat = new ModelChocolat($id,$type,$nom,$prixkilo,$masse,$image,$description);
-        $chocolat->save($data);
+	ModelChocolat::save($data);
 
         ControllerChocolat::readAll();
     }
@@ -88,6 +81,7 @@ class ControllerChocolat {
 
         $view='update';
         $pagetitle='Modification Chocolat';
+        $controller='chocolat';
         require File::build_path(array("view","view.php"));
     }
 

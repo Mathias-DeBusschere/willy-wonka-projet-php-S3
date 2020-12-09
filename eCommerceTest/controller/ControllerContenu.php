@@ -16,7 +16,7 @@ class ControllerContenu {
         $idCommande = $_GET['idCommande'];
         $idProduit = $_GET['idProduit'];
         echo "Le contenu $idCommande | $idProduit vient d'être supprimé !";
-        ModelContenu::delete($idCommande,$idProduit);
+        ModelContenu::deleteContenu($idCommande,$idProduit);
         ControllerContenu::readAll();
     }
 
@@ -55,7 +55,7 @@ class ControllerContenu {
     public static function update(){
         $idCommande = $_GET['idCommande'];
         $idProduit = $_GET['idProduit'];
-        $quantite = ModelContenu::select($idCommande,$idProduit)->getQuantite();
+        $quantite = ModelContenu::selectContenu($idCommande,$idProduit)->getQuantite();
 
         $restriction='readonly';
         $action='updated';
@@ -70,7 +70,7 @@ class ControllerContenu {
         $idProduit = $_GET['idProduit'];
 
 
-        $contenu = ModelContenu::select($idCommande,$idProduit);
+        $contenu = ModelContenu::selectContenu($idCommande,$idProduit);
         $data = array(
         "idCommande" => $idCommande,
         "idProduit" => $idProduit,

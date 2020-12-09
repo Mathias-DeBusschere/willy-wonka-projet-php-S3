@@ -1,9 +1,10 @@
+<h1 id="top_page_title">Creation Commande</h1>
+<div class="beige_bg form_container">
 <?php
 echo '
 <form method="GET" action="index.php">
   
   <fieldset>
-    <legend>Création commande :</legend>
     <p>
       <label for="id">Identifiant Commande</label> :
       <input value = "'. htmlspecialchars($id) .'" type="text" placeholder="Ex : 1" name="id" id="id" '.$restriction.'/>
@@ -20,3 +21,4 @@ echo '
   </fieldset> 
 </form>'
 ?>
+</div>

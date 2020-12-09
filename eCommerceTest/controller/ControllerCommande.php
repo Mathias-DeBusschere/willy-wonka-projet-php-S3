@@ -12,6 +12,21 @@ class ControllerCommande {
         require File::build_path(array("view","view.php"));
     }
 
+    public static function read(){
+        
+        $c = $_GET['id'];
+        $commande = ModelCommande::select($c);
+        if ($commande == null){
+            //$view='error';
+            //$pagetitle='Error';
+            //require File::build_path(array("view","view.php"));
+        }else{
+            $view='detail';
+            $pagetitle='Détails commande';
+            require File::build_path(array("view","view.php"));
+        }
+    }
+
     public static function delete(){
         $id = $_GET['id'];
         echo "La commande $id vient d'être supprimé !";

@@ -1,9 +1,11 @@
+<h1 id="top_page_title">Confection  du  Chocolat</h1>
+<div class="beige_bg form_container">
 <?php
 echo '
+
 <form method="GET" action="index.php">
   
   <fieldset>
-    <legend>Confection du Chocolat :</legend>
     <p>
       <label for="id">Identifiant</label> :
       <input value = "'. htmlspecialchars($id) .'" type="text" placeholder="Ex : 1" name="id" id="id" '.$restriction.'/>
@@ -40,3 +42,4 @@ echo '
   </fieldset> 
 </form>'
 ?>
+</div>

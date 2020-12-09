@@ -21,9 +21,7 @@
         <link rel="stylesheet" media="all and (min-width: 1200px)" type="text/css" href="css/headercss/header_viewport-12.css">
 
         <!-- main -->
-        <?php
-            require FILE::build_path(array("view","css.php"));
-        ?>
+        <?php require FILE::build_path(array("view","css.php")); ?>
 
         <!-- footer -->
         <link rel="stylesheet" media="all" type="text/css" href="css/footercss/footer_all.css">
@@ -36,7 +34,13 @@
             <nav class="second_nav">
                     <ul class="second_nav_links">
                         <li><a href="../englishVersion/indexEn.html">In English</a></li>
-                        <li><a href="index.php?page=connexion&controller=utilisateur">Se connecter</a></li>
+                        <?php
+                            if (isset($_SESSION["idUser"])) {
+                                echo "<li><a href=\"index.php?page=deconnexion&controller=utilisateur\">Déconnexion</a></li>";
+                            } else {
+                                echo "<li><a href=\"index.php?page=connexion&controller=utilisateur\">Se connecter</a></li>";
+                            }
+                        ?>
                         <li class="cart"><a href="index.php?page=cart">Mon Panier</a></li>
                     </ul>
             </nav>

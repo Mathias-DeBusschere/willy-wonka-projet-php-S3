@@ -3,7 +3,7 @@ require_once File::build_path(array("model","Model.php"));
 class ModelUtilisateur extends Model {
 
     protected static $object = 'utilisateur';
-    protected static $primary ='email';
+    protected static $primary ='id';
 
     private $id;
     private $prenom;
@@ -12,6 +12,7 @@ class ModelUtilisateur extends Model {
     private $email;
     private $password;
     private $admin;
+    private $nonce;
 
 
     // Getters
@@ -29,6 +30,8 @@ class ModelUtilisateur extends Model {
 
     public function getAdmin(){return $this->admin;}
 
+    public function getNonce(){return $this->nonce;}
+
     // Setters
     public function setId($id){$this->id = $id;}
 
@@ -43,6 +46,8 @@ class ModelUtilisateur extends Model {
     public function setPassword($password){$this->password = $password;}
 
     public function setAdmin($admin){$this->admin = $admin;}
+
+    public function setNonce($nonce){$this->nonce = $nonce;}
 
 
     //Constructeur
@@ -77,6 +82,27 @@ class ModelUtilisateur extends Model {
             return false;
         }
         return $tab_object[0]->password == $passwordhache;
+    }
+
+    public static function selectByEmail($email) {
+        $table_name = 'p_'.static::$object;
+        $class_name = 'Model'.ucfirst(static::$object);
+
+        $sql = 'SELECT * FROM '.$table_name .' WHERE email=:nom_tag';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array("nom_tag" => $email);
+            $req_prep->execute($values);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $class_name);
+            $tab_object = $req_prep->fetchAll();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        if (empty($tab_object)){
+            return false;
+        }
+        return $tab_object[0];
     }
 }
 ?>

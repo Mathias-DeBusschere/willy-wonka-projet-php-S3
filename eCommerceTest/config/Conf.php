@@ -7,17 +7,17 @@
         'hostname' => 'localhost',
     // A l'IUT, vous avez une BDD nommee comme votre login
     // Sur votre machine, vous devrez creer une BDD
-//        'database' => 'WillyWonka',
-        'database' => 'debusscherem',
+        'database' => 'WillyWonka',
+//        'database' => 'debusscherem',
     // A l'IUT, c'est votre login
     // Sur votre machine, vous avez surement un compte 'root'
-//        'login' => 'root',
-        'login' => 'debusscherem',
+        'login' => 'root',
+//        'login' => 'debusscherem',
     // A l'IUT, c'est votre mdp (INE par defaut)
     // Sur votre machine personelle, vous avez creez ce mdp a l'installation
 //        'password' => ''
-        'password' => '1515900537A'
-//          'password' => 'root'
+//        'password' => '1515900537A'
+          'password' => 'root'
     );
 
       static public function getLogin() {

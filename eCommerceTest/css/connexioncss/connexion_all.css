@@ -16,6 +16,24 @@ main:after {
 	border: solid 10px #3d2b29;
 }
 
+.error {
+	background: rgba(200,0,0,0.5);
+}
+
+main li {
+	color: rgba(200,0,0,0.8);
+	display: none;
+}
+
+main li.emptyFields, li.invalidEmail, li.invalidPwdEmailPair, li.emailAlreadyUsed, li.passwordRepeat {
+	display: list-item;
+}
+
+li.emailAlreadyUsed a {
+	color: darkred;
+	text-decoration: underline;
+}
+
 h2 {
 	font-weight: normal;
 	font-size: 18px;

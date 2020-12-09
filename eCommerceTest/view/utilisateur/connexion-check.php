@@ -2,7 +2,7 @@
     if (isset($_POST["login-submit"])) {
         $email = $_POST["email"];
         $password = $_POST["pwd"];
-        $hashedPwd = Security::hacher($password);
+        $hashedPwd = Security::hasher($password);
 
         if (empty($email) || empty($password)) {
             $_POST["error"] = "emptyFields";
@@ -12,12 +12,16 @@
             $_POST["error"] = "invalidEmail";
             require File::build_path(array("view","utilisateur","connexion.php"));
             exit();
-        } else if (ModelUtilisateur::checkPassword($email,$hashedPwd)) {
+        } else if (!ModelUtilisateur::checkPassword($email,$hashedPwd)) {
             $_POST["error"] = "invalidPwdEmailPair";
             require File::build_path(array("view","utilisateur","connexion.php"));
             exit();
+        } else if (ModelUtilisateur::checkPassword($email,$hashedPwd)){
+            $_SESSION['idUser'] == ModelUtilisateur::selectByEmail($email)->getId();
+            $_SESSION['emailUser'] == $email;
         } else {
-//            session
+            require File::build_path(array("view","utilisateur","connexion.php"));
+            exit();
         }
     } else {
         require File::build_path(array("view","utilisateur","connexion.php"));

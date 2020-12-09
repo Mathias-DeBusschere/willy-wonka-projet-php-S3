@@ -18,24 +18,23 @@
             unset($_POST["email"]);
             require File::build_path(array("view","utilisateur","inscription.php"));
             exit();
-        } else if (ModelUtilisateur::select($email)) {
+        } else if (ModelUtilisateur::selectByEmail($email)) {
             $_POST["error"] = "emailAlreadyUsed";
             unset($_POST["email"]);
             require File::build_path(array("view","utilisateur","inscription.php"));
             exit();
         } else if ($pwd != $pwd_repeat) {
-            $_POST["error"] = "paswordRepeat";
+            $_POST["error"] = "passwordRepeat";
             require File::build_path(array("view","utilisateur","inscription.php"));
             exit();
         } else {
             if (empty($gender))
                 $gender = $other_gender;
 
-            $hashed_pwd = Security::hacher($pwd);
+            $hashed_pwd = Security::hasher($pwd);
             $nonce = Security::generateRandomHex();
 
             $data = array(
-                "id" => "NULL",
                 "prenom" => $prenom,
                 "nom" => $nom,
                 "gender" => $gender,
@@ -46,7 +45,8 @@
             );
             ControllerUtilisateur::created($data);
 
-            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n ". $_SERVER["SERVER_NAME"].$_SERVER["PATH_INFO"];
+            $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n ".
+                $_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"]."?action=validation&nonce=".$nonce."&id=".ModelUtilisateur::selectByEmail($email)->getID();
             $msg = wordwrap($msg, 70);
 //            print ($msg);
 

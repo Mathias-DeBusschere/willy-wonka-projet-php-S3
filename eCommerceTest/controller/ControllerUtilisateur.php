@@ -47,7 +47,7 @@ class ControllerUtilisateur {
         $controller = 'utilisateur';
         $view = 'insc-validation';
         $pagetitle = 'Inscription complète';
-        require (File::build_path(array("view","view.php")));
+        require (File::build_path(array("view","utilisateur","insc-validation.php")));
 
     }
 

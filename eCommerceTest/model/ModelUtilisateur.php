@@ -3,7 +3,7 @@ require_once File::build_path(array("model","Model.php"));
 class ModelUtilisateur extends Model {
 
     protected static $object = 'utilisateur';
-    protected static $primary ='email';
+    protected static $primary ='id';
 
     private $id;
     private $prenom;

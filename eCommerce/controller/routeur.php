@@ -3,6 +3,7 @@ require_once File::build_path(array("controller","ControllerChocolat.php"));
 require_once File::build_path(array("controller","ControllerCommande.php"));
 require_once File::build_path(array("controller","ControllerUtilisateur.php"));
 require_once File::build_path(array("controller","ControllerContenu.php"));
+require_once File::build_path(array("controller","ControllerCart.php"));
 
 if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action']) || isset($_POST['controller'])){
 	if(isset($_GET['action'])){

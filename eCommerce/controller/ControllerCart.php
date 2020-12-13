@@ -4,6 +4,13 @@
 class ControllerCart {
     protected static $object ='cart';
 
+    public static function showCart() {
+        $controller='cart';
+        $view='list';
+        require File::build_path(array("view","view.php"));
+
+    }
+
     public static function addToCart() {
         $id = $_POST['idChocolat'];
         $quantity = $_POST['quantity'];
@@ -31,7 +38,7 @@ class ControllerCart {
     }
 
     public static function deleteFromCart() {
-	unset($_SESSION["cart"][$_GET["idInCart"]];)
+	unset($_SESSION["cart"][$_GET["idInCart"]]);
 	
         $controller='cart';
         $view='list';

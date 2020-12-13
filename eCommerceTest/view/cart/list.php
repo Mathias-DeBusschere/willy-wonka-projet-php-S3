@@ -3,6 +3,8 @@
 <?php
     foreach ($_SESSION["cart"] as $item) {
         echo "<p>Product id : " . $item["id"] . ", quantity : " . $item["quantity"] . "</p>";
+	echo '<a href="index.php?controller=contenu&action=update&idCommande='.$item.'"><img src="images/header/settings.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>';
+	echo '<a href="index.php?controller=contenu&action=deleteFromCart&idInCart='.rawurlencode($contenu->getIdCommande()).'&idProduit='.rawurlencode($contenu->getIdProduit()).'"><img src="images/header/delete.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>';
     }
     echo "</br><p><a href=\"index.php?controller=chocolat&action=emptyCart\">vider le panier</a></p>";
 

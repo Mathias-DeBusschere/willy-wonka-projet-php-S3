@@ -25,7 +25,7 @@
 	</article>
 	<article class="review">
 		<h2>Écrire un commentaire: </h2>
-		<form action="chocolateid0002.html" method="post" class="review_post"> 
+		<form action="index.php?page=wip" method="post" class="review_post"> 
 			<h3><label for="review_title">Ajoutez un titre:</label></h3>
 			<input type="text" name="review_title" id="review_title" maxlength="30" placeholder="Qu'est ce qui est le plus important à savoir ?" required />
 			<h3><label for="review_desc">Décrivez votre expérience:</label></h3>

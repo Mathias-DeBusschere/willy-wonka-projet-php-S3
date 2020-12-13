@@ -33,6 +33,13 @@
         <header>
             <nav class="second_nav">
                     <ul class="second_nav_links">
+                        <?php
+                            if (isset($_SESSION["isAdmin"])) {
+                                echo "<li><a href=\"index.php?action=readAll&controller=utilisateur\">Utilisateurs</a></li>";
+                                echo "<li><a href=\"index.php?action=readAll&controller=commande\">Commandes</a></li>";
+                                echo "<li><a href=\"index.php?action=readAll&controller=contenu\">Contenus</a></li>";
+                            }
+                        ?>
                         <li><a href="index.php?page=wip">In English</a></li>
                         <?php
                             if (isset($_SESSION["idUser"])) {
@@ -107,7 +114,7 @@
             if(isset($controller))
                 require File::build_path(array("view", $controller, "$view.php"));
             else
-                require File::build_path(array("view", "$view.php"));
+                require File::build_path(array("view","page", "$view.php"));
 		?>
     </main>
 

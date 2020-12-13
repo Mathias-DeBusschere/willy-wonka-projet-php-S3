@@ -16,7 +16,6 @@ class ControllerContenu {
     public static function delete(){
         $idCommande = $_GET['idCommande'];
         $idProduit = $_GET['idProduit'];
-        echo "Le contenu $idCommande | $idProduit vient d'être supprimé !";
         ModelContenu::deleteContenu($idCommande,$idProduit);
         ControllerContenu::readAll();
     }
@@ -47,7 +46,6 @@ class ControllerContenu {
         "quantite" => $quantite);
 
         
-
         $contenu = new ModelContenu($idCommande,$idProduit,$quantite);
         $contenu->save($data);
 

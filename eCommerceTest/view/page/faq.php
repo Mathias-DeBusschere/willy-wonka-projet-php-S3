@@ -92,7 +92,7 @@
 
 			<div class="reponse">
 				<p>
-					Pour acheter du chocolat, il vous suffit de vous rendre dans un de nos commerces, ou bien de procédé a l'achat directement sur <a href="index.php?page=chocolatgeneral">notre page produit.</a>
+					Pour acheter du chocolat, il vous suffit de vous rendre dans un de nos commerces, ou bien de procédé a l'achat directement sur <a href="index.php?controller=chocolat&action=readAll">notre page produit.</a>
 				</p>
 			</div>
 

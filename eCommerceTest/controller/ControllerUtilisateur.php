@@ -5,24 +5,27 @@ class ControllerUtilisateur {
     protected static $object='utilisateur';
 
     public static function readAll() {
-        $tab_u = ModelUtilisateur::selectAll();
+        $tab_utilisateurs = ModelUtilisateur::selectAll();
         $controller = 'utilisateur';
-        $view = 'list';
+        $view = 'utilisateursgeneral';
         $pagetitle = 'Liste des utilisateur';
         require (File::build_path(array("view","view.php")));
     }
 
-    public static function read($email){
-        $controller = 'utilisateur';
-        if ($tab_u = ModelUtilisateur::select($email)) {
-            $view = 'detail';
-            $pagetitle = 'Detail Utilisateur';
-            require (File::build_path(array("view","view.php")));
-        }
-        else{
-            $view = 'error';
-            $pagetitle = 'ERROR';
-            require (File::build_path(array("view","view.php")));
+    public static function read(){
+        $id = $_GET["id"];
+
+        $utilisateur = ModelUtilisateur::select($id);
+        if ($utilisateur == null){
+            $controller='error';
+            $view='errorgeneral';
+            $pagetitle='Oups :(';
+            require File::build_path(array("view","view.php"));
+        }else{
+            $view='detail';
+            $pagetitle='Page Utilisateur';
+            $controller='utilisateur';
+            require File::build_path(array("view","view.php"));
         }
     }
 

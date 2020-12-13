@@ -32,7 +32,6 @@ class ControllerChocolat {
     public static function delete(){
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
             $id = $_GET['id'];
-            echo "Le chocolat $id vient d'être supprimé !";
             ModelChocolat::delete($id);
             ControllerChocolat::readAll();
         } else {
@@ -124,8 +123,6 @@ class ControllerChocolat {
     public static function addToCart() {
         $id = $_POST['idChocolat'];
         $quantity = $_POST['quantity'];
-//        echo $id." ".$quantity+=1;
-//        echo "  |  ";
 
         if (!isset($_SESSION["cart"])) {
             $_SESSION["cart"] = array();

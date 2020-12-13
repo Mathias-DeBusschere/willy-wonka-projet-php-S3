@@ -6,10 +6,6 @@ echo '
   
   <fieldset>
     <p>
-      <label for="id">Identifiant Commande</label> :
-      <input value = "'. htmlspecialchars($id) .'" type="text" placeholder="Ex : 1" name="id" id="id" '.$restriction.'/>
-    </p>
-    <p>
       <label for="idUtilisateur">idUtilisateur</label> :
       <input value = "'. htmlspecialchars($idUtilisateur) .'"  type="text" placeholder="Ex : 1" name="idUtilisateur" id="idUtilisateur" required/>
     </p>

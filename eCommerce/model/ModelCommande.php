@@ -48,5 +48,25 @@
         }
       return $tab_object;
     }
+
+    public static function selectMine($idUtilisateur){
+
+      $sql = 'SELECT * FROM p_commande WHERE idUtilisateur=:nom_tag';
+      try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $values = array("nom_tag" => $idUtilisateur);
+            $req_prep->execute($values);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'ModelCommande');
+            $tab_object = $req_prep->fetchAll();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        if (empty($tab_object)){
+            return false;
+        }
+      return $tab_object;
+    }
+
 }
 ?>

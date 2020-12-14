@@ -14,7 +14,7 @@
 		<fieldset class="type_field">
 			<label>
 				<img src="images/connexion/pass-icon.png" alt="password_icon" />
-				<input type="password" name="pwd" <?php echo (isset($_POST["error"])? ((($_POST["error"]=="emptyFields" || $_POST["error"]=="invalidEmail") && !empty($password))? "" : "class=\"error\""): ""); ?> placeholder="Mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" id="password" maxlength="32"  required/>
+				<input type="password" name="pwd" <?php echo (isset($_POST["error"])? ((($_POST["error"]=="emptyFields" || $_POST["error"]=="invalidEmail") && !empty($password))? "" : "class=\"error\""): ""); ?> placeholder="Mot de passe" title="Pas de pattern pour plus de faciliter à test."  id="password" maxlength="32"  required/>
 			</label>
 		</fieldset>
 		<fieldset>

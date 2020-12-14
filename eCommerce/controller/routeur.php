@@ -26,7 +26,7 @@ if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action'
 	$class_methods = get_class_methods($controller_class);
 
 
-	if(class_exists($controller_class)){
+	if(class_exists($controller_class) && !isset($_GET["page"])){
 		if(in_array($action, $class_methods)){
 			$controller_class::$action(); 
 		}else{
@@ -37,6 +37,7 @@ if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action'
 		}
 	}elseif (isset($_GET["page"])) {
 		$view = $_GET["page"];
+		$pagetitle = $view;
 		require_once File::build_path(array("view","view.php"));
 	}else{
 		$controller='error';

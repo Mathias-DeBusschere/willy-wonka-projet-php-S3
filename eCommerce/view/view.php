@@ -34,16 +34,18 @@
             <nav class="second_nav">
                     <ul class="second_nav_links">
                         <?php
-                            if (isset($_SESSION["isAdmin"])) {
-                                echo "<li><a href=\"index.php?action=readAll&controller=utilisateur\">Utilisateurs</a></li>";
-                                echo "<li><a href=\"index.php?action=readAll&controller=commande\">Commandes</a></li>";
-                                echo "<li><a href=\"index.php?action=readAll&controller=contenu\">Contenus</a></li>";
+                            if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]==0) {
+                                echo "<li><a href=\"index.php?&page=upload\">IMAGES</a></li>";
+                                echo "<li><a href=\"index.php?action=readAll&controller=utilisateur\">UTILISATEURS</a></li>";
+                                echo "<li><a href=\"index.php?action=readAll&controller=commande\">COMMANDES</a></li>";
+                                echo "<li><a href=\"index.php?action=readAll&controller=contenu\">CONTENUS</a></li>";
                             }
                         ?>
                         <li><a href="index.php?page=wip">In English</a></li>
                         <?php
                             if (isset($_SESSION["idUser"])) {
                                 echo "<li><a href=\"index.php?action=deconnexion&controller=utilisateur\">Déconnexion</a></li>";
+                                echo "<li><a href=\"index.php?action=readMine&controller=commande\">Mes Commandes</a></li>";
                             } else {
                                 echo "<li><a href=\"index.php?action=connexion&controller=utilisateur\">Se connecter</a></li>";
                             }
@@ -160,7 +162,7 @@
                 <a href="index.php?page=contact">Contactez-nous</a>
             </div>
             <div id="fourth_footer">
-                <p>© 2019 Chocolate Factory Willy Wonka</p>
+                <p>© 2020 Chocolate Factory Willy Wonka</p>
             </div>
         </footer>
     </body>

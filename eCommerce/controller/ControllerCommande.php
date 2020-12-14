@@ -6,7 +6,7 @@ class ControllerCommande {
 
     public static function readAll() {
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
-            $tab_commande = ModelCommande::selectAll();
+            $tab_commande = ModelCommande::selectAll();         
             $view='commandegeneral';
             $pagetitle='Liste des Commandes';
             $controller='commande';
@@ -18,7 +18,7 @@ class ControllerCommande {
 
     public static function readMine() {
         if(isset($_SESSION["idUser"])){
-            $tab_commande = ModelCommande::selectMine($_SESSION["idUser"]);
+            $tab_commande = ModelCommande::selectMine($_SESSION["idUser"]);     
             $view='commandegeneral';
             $pagetitle='Liste des Commandes';
             $controller='commande';
@@ -28,7 +28,7 @@ class ControllerCommande {
             $view='connexion';
             $pagetitle='Connexion';
             require File::build_path(array("view","view.php"));
-        }
+        }  
     }
 
     public static function read(){
@@ -52,7 +52,7 @@ class ControllerCommande {
             $pagetitle='Oups :(';
             require File::build_path(array("view","view.php"));
         }
-
+        
     }
 
     public static function delete(){
@@ -76,7 +76,7 @@ class ControllerCommande {
             $controller='commande';
             require File::build_path(array("view","view.php"));}
         else{
-            ControllerCommande::readMine();
+            ControllerChocolat::readAll();
         }
     }
 

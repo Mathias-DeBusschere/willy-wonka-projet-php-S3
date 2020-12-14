@@ -3,7 +3,7 @@
     <section class="cart">
         <?php
         if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
-            echo '<p style="padding: 20px;">Votre panier     -    '.htmlspecialchars(ModelUtilisateur::select($_SESSION["idUser"])->getNom()).' '.htmlspecialchars(ModelUtilisateur::select($_SESSION["idUser"])->getPrenom()).'</p>
+            echo '<p style="padding: 20px;">Votre panier     -    '.((isset($_SESSION["idUser"]))?(htmlspecialchars(ModelUtilisateur::select($_SESSION["idUser"])->getNom()).' '.htmlspecialchars(ModelUtilisateur::select($_SESSION["idUser"])->getPrenom())):("Invité")).'</p>
                 <table style ="width: 100%; text-align: center;">
                     <thead>
                         <tr>

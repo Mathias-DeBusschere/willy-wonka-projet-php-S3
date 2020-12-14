@@ -3,7 +3,6 @@
 
 class ControllerCart {
     protected static $object ='cart';
-    static int $taille=0;
 
     public static function showCart() {
         $pagetitle = 'Panier';
@@ -121,22 +120,27 @@ class ControllerCart {
     }
 
     public static function payer() {
-        $dataCommande = array(
-            "idUtilisateur" => $_SESSION["idUser"]);
+	if (isset($_SESSION["idUser"])) {
 
-        ModelCommande::save($dataCommande);
+	$dataCommande = array(
+	    "idUtilisateur" => $_SESSION["idUser"]);
 
-        $idCommande = Model::$pdo->lastInsertId();
+	ModelCommande::save($dataCommande);
 
-        foreach ($_SESSION["cart"] as $item) {
-            $dataContenu = array(
-                "idCommande" => $idCommande,
-                "idProduit" => $item["id"],
-                "quantite" => $item["quantity"]
-            );
-            ModelContenu::save($dataContenu);
-        }
-        ControllerCommande::readMine();
+	$idCommande = Model::$pdo->lastInsertId();
+
+	foreach ($_SESSION["cart"] as $item) {
+	    $dataContenu = array(
+		"idCommande" => $idCommande,
+		"idProduit" => $item["id"],
+		"quantite" => $item["quantity"]
+	    );
+	    ModelContenu::save($dataContenu);
+	}
+	ControllerCommande::readMine();
+	} else {
+		ControllerUtilisateur::connexion();
+	}
     }
     
 }

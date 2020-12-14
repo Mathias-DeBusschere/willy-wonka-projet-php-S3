@@ -32,7 +32,7 @@
       $table_name = 'p_contenu';
       $class_name = 'ModelContenu';
       
-      $sql = 'SELECT * FROM p_contenu WHERE idCommande=:nom_tag';
+      $sql = 'SELECT * FROM p_contenu WHERE idCommande=:nom_tag ORDER BY idCommande';
       try{
             $req_prep = Model::$pdo->prepare($sql);
             $values = array("nom_tag" => $idCommande);

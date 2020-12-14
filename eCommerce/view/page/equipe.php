@@ -41,32 +41,13 @@
 			<img src="images/perso1.png" alt="rien a voir dsl" class="transparent">
 		</label>
 		<p class="textdescription">
-			Gabriel Martinez fait exactement le meme métier que ses deux collègue et c'est surtout celui qui écrit ça (il lui reste du temps pour remplacer tous le lorem ipsum)
+			Tom Rey est le 4ème étudiant a avoir travailler sur ce projet après Gabriel au S1.
 		</p>
 		<div class="imgperso">
 			<img src="images/perso1.png" alt="photo3">
 		</div>
 		<div class="txtperso">
-			<h2>GABRIEL</h2>
-		</div>
-	</article>
-
-	<article class="perso" id="p4">
-		<input type="checkbox" name="checkboxp4" id="boxp4">
-		<label class="labelp4" for="boxp4">
-			<img src="images/perso1.png" alt="rien a voir dsl" class="transparent">
-		</label>
-		<p class="textdescription">
-			Tom Rey est le 4ème étudiant a avoir travailler sur ce projet, cependant seulement lors du S3.
-		</p>
-		<div class="imgperso">
-			<img src="images/perso1.png" alt="photo4">
-		</div>
-		<div class="txtperso">
 			<h2>TOM</h2>
 		</div>
 	</article>
-
-
-	
 </div>

@@ -25,7 +25,7 @@ main li {
 	display: none;
 }
 
-main li.emptyFields, li.invalidEmail, li.invalidPwdEmailPair, li.emailAlreadyUsed, li.passwordRepeat {
+main li.emptyFields, li.invalidEmail, li.invalidPwdEmailPair, li.emailAlreadyUsed, li.passwordRepeat, li.invalidAccount {
 	display: list-item;
 }
 

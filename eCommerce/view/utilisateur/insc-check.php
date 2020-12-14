@@ -11,21 +11,21 @@
 
         if (empty($prenom) || empty($nom) || empty($email) || empty($pwd) || empty($pwd_repeat) || (empty($gender) && empty($other_gender))) {
             $_POST["error"] = "emptyFields";
-            require File::build_path(array("view","utilisateur","inscription.php"));
+	    ControllerUtilisateur::create();
             exit();
         } else if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
             $_POST["error"] = "invalidEmail";
             unset($_POST["email"]);
-            require File::build_path(array("view","utilisateur","inscription.php"));
+	    ControllerUtilisateur::create();
             exit();
         } else if (ModelUtilisateur::selectByEmail($email)) {
             $_POST["error"] = "emailAlreadyUsed";
             unset($_POST["email"]);
-            require File::build_path(array("view","utilisateur","inscription.php"));
+	    ControllerUtilisateur::create();
             exit();
         } else if ($pwd != $pwd_repeat) {
             $_POST["error"] = "passwordRepeat";
-            require File::build_path(array("view","utilisateur","inscription.php"));
+	    ControllerUtilisateur::create();
             exit();
         } else {
             if (empty($gender))
@@ -57,7 +57,7 @@
         }
 
     } else {
-        require File::build_path(array("view","utilisateur","inscription.php"));
+	ControllerUtilisateur::create();
         exit();
     }
 

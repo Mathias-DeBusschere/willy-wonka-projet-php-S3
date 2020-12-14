@@ -54,7 +54,7 @@ if(isset($_GET['action']) || isset($_GET['controller']) || isset($_POST['action'
  		$page = "accueil";
 	}
 	$view=$page;
-	$pagetitle=$page;
+	$pagetitle=ucfirst($page);
 	require_once File::build_path(array("view","view.php"));
 
 }

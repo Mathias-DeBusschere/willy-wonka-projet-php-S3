@@ -4,11 +4,12 @@
 	<form method="post" action="index.php">
         <?php echo (isset($_POST["error"])? "<li class=\"".$_POST["error"]."\">".(($_POST["error"]=="emptyFields")? "Veuillez remplir tous les champs.</li>":
                                                                                 (($_POST["error"]=="invalidEmail")? "L'addresse email entrer ne respécte pas la forme d'une adresse email classique.</li>" :
-                                                                                (($_POST["error"]=="invalidPwdEmailPair")? "L'email et le mot de passe ne correspondent pas.</li>":""))):"")?>
+										(($_POST["error"]=="invalidPwdEmailPair")? "L'email et le mot de passe ne correspondent pas.</li>":
+										(($_POST["error"]=="invalidAccount")? "Le compte lié à ce mail n'as pas encore été validé. Veuillez vérifier vos mail.</li>":"")))):"")?>
         <fieldset class="type_field">
 			<label>
 				<img src="images/connexion/user-icon.png" alt="user_icon" />
-				<input type="email" name="email" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields" && !empty($email))? "" : "class=\"error\""): "");?> placeholder="Email" id="email" value="<?php echo (empty($email)? "" : $email)?>" required/>
+				<input type="email" name="email" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields" && !empty($email))? "" : "class=\"error\""): "");?> placeholder="Email" id="email" value="<?php echo (isset($_POST["email"])? $_POST["email"] : "")?>" required/>
 			</label>
 		</fieldset>
 		<fieldset class="type_field">

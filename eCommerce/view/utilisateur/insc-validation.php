@@ -1,4 +1,5 @@
 <?php
+$pagetitle = "validation inscription";
 	if (isset($_GET["id"]) && isset($_GET["validation"]) && isset ($_GET["nonce"])) {
 		$id = $_GET["id"];
 		$u = ModelUtilisateur::select($id);

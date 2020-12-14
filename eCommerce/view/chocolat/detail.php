@@ -18,7 +18,7 @@
 				<input type="hidden" name="idChocolat" value="<?php echo $c->getId(); ?>" />
 				<input type="number" name="quantity" min="1" value="1" required class="quantity" />
                 <input type="hidden" name="action" value="addToCart">
-                <input type="hidden" name="controller" value="chocolat">
+                <input type="hidden" name="controller" value="cart">
 				<input type="submit" name="submit" value="Ajouter au panier" class="submit_to_cart">
 			</form>
 		</div>

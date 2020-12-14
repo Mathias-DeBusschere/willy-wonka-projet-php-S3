@@ -48,7 +48,7 @@
                                 echo "<li><a href=\"index.php?action=connexion&controller=utilisateur\">Se connecter</a></li>";
                             }
                         ?>
-                        <li class="cart"><a href="index.php?page=list&controller=cart">Mon Panier</a></li>
+                        <li class="cart"><a href="index.php?action=showCart&controller=cart">Mon Panier</a></li>
                     </ul>
             </nav>
             <div id="nav_logo_container">

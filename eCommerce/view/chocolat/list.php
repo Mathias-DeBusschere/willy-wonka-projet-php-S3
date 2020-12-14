@@ -14,7 +14,7 @@ foreach ($tab_chocolat as $chocolat) {
 				<form action="index.php" method="post" class="other_product_cart">
 					<input type="hidden" name="idChocolat" value="'.$c->getId().'" />
                 	<input type="hidden" name="action" value="addToCart">
-                	<input type="hidden" name="controller" value="chocolat">
+                	<input type="hidden" name="controller" value="cart">
 					<input type="number" hidden name="quantity" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>
@@ -35,7 +35,7 @@ foreach ($tab_chocolat as $chocolat) {
 				<form action="index.php" method="post" class="other_product_cart">
 					<input type="hidden" name="idChocolat" value="'.$chocolat->getId().'" />
                 	<input type="hidden" name="action" value="addToCart">
-                	<input type="hidden" name="controller" value="chocolat">
+                	<input type="hidden" name="controller" value="cart">
 					<input type="number" hidden name="quantity" class="add_one_cart" value="1" />
 					<input type="submit" name="add_one_cart_submit" value="" />
 				</form>';

@@ -53,13 +53,13 @@
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />
+							<input type="password" name="pwd" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Nouveau mot de passe" title="Doit contenir au minimum 8 charactere, dont 1 chiffre, 1 lettre miniscule, 1 lettre majuscule et 1 signe" maxlength="32" required />
 						</label>
 					</fieldset>
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/pass-icon.png" alt="password_icon" />
-							<input type="password" name="pwd-repeat" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd_repeat))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Vérifié Mot de passe" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" maxlength="32" required />
+							<input type="password" name="pwd-repeat" <?php echo (isset($_POST["error"])? (($_POST["error"]=="emptyFields")? ((empty($pwd_repeat))? "class=\"error\"": ""): (($_POST["error"]=="passwordRepeat")? "class=\"error\"" : "" )):""); ?> placeholder="Vérifié Mot de passe" maxlength="32" required />
 						</label>
 					</fieldset>
                     <input type='hidden' name='action' value='creating' >

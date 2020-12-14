@@ -5,81 +5,93 @@ class ControllerContenu {
     protected static $object ='contenu';
 
     public static function readAll() {
-
-        $tab_contenu = ModelContenu::selectAll();         
-        $view='contenugeneral';
-        $pagetitle='Liste des Contenus';
-        $controller='contenu';
-        require File::build_path(array("view","view.php"));
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $tab_contenu = ModelContenu::selectAll();         
+            $view='contenugeneral';
+            $pagetitle='Liste des Contenus';
+            $controller='contenu';
+            require File::build_path(array("view","view.php"));}
+        else{
+            ControllerCommande::readMine();
+        }
     }
 
     public static function delete(){
-        $idCommande = $_GET['idCommande'];
-        $idProduit = $_GET['idProduit'];
-        ModelContenu::deleteContenu($idCommande,$idProduit);
-        ControllerContenu::readAll();
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $idCommande = $_GET['idCommande'];
+            $idProduit = $_GET['idProduit'];
+            ModelContenu::deleteContenu($idCommande,$idProduit);
+            ControllerContenu::readAll();}
+        else{
+            ControllerCommande::readMine();
+        }
     }
 
     public static function create(){
-        $idCommande = '';
-        $idProduit = '';
-        $quantite ='';
-        
-
-        $action='created';
-        $restriction='required';
-        $view='update';
-        $pagetitle='Création contenu';
-        $controller='contenu';
-        require File::build_path(array("view","view.php"));
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $idCommande = '';
+            $idProduit = '';
+            $quantite ='';
+            $action='created';
+            $restriction='required';
+            $view='update';
+            $pagetitle='Création contenu';
+            $controller='contenu';
+            require File::build_path(array("view","view.php"));}
+        else{
+            ControllerCommande::readMine();
+        }
     }
 
 
     public static function created(){
-        $idCommande = $_GET['idCommande'];
-        $idProduit = $_GET['idProduit'];
-        $quantite = $_GET['quantite'];
-
-        $data = array(
-        "idCommande" => $idCommande,
-        "idProduit" => $idProduit,
-        "quantite" => $quantite);
-
-        
-        $contenu = new ModelContenu($idCommande,$idProduit,$quantite);
-        $contenu->save($data);
-
-        ControllerContenu::readAll();
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $idCommande = $_GET['idCommande'];
+            $idProduit = $_GET['idProduit'];
+            $quantite = $_GET['quantite'];
+            $data = array(
+            "idCommande" => $idCommande,
+            "idProduit" => $idProduit,
+            "quantite" => $quantite);
+            $contenu = new ModelContenu($idCommande,$idProduit,$quantite);
+            $contenu->save($data);
+            ControllerContenu::readAll();}
+        else{
+            ControllerCommande::readMine();
+        }
     }
 
+    //Update ne fait pas vraiment de sens dans ce controller.
     public static function update(){
-        $idCommande = $_GET['idCommande'];
-        $idProduit = $_GET['idProduit'];
-        $quantite = ModelContenu::selectContenu($idCommande,$idProduit)->getQuantite();
-
-        $restriction='readonly';
-        $action='updated';
-
-        $view='update';
-        $pagetitle='Modification Contenu';
-        $controller='contenu';
-        require File::build_path(array("view","view.php"));
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $idCommande = $_GET['idCommande'];
+            $idProduit = $_GET['idProduit'];
+            $quantite = ModelContenu::selectContenu($idCommande,$idProduit)->getQuantite();
+            $restriction='readonly';
+            $action='updated';
+            $view='update';
+            $pagetitle='Modification Contenu';
+            $controller='contenu';
+            require File::build_path(array("view","view.php"));}
+        else{
+            ControllerCommande::readMine();
+        }
     }
 
     public static function updated(){
-        $idCommande = $_GET['idCommande'];
-        $idProduit = $_GET['idProduit'];
-
-
-        $contenu = ModelContenu::selectContenu($idCommande,$idProduit);
-        $data = array(
-        "idCommande" => $idCommande,
-        "idProduit" => $idProduit,
-        "quantite" => $_GET['quantite']);
-
-        $contenu->update($data);
-        
-        ControllerContenu::readAll();
+        if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+            $idCommande = $_GET['idCommande'];
+            $idProduit = $_GET['idProduit'];
+            $contenu = ModelContenu::selectContenu($idCommande,$idProduit);
+            $data = array(
+            "idCommande" => $idCommande,
+            "idProduit" => $idProduit,
+            "quantite" => $_GET['quantite']);
+            $contenu->update($data);
+            ControllerContenu::readAll();}
+            else{
+            ControllerCommande::readMine();
+        }
     }  
 }
 ?>

@@ -6,7 +6,7 @@ foreach ($tab_chocolat as $chocolat) {
 		<article class="other_product_article">
 			<a href="index.php?controller=chocolat&action=read&id=' . rawurlencode($chocolat->getId()) . '">
 				<div class="image">
-					<img class="product_img" src="' . htmlspecialchars($chocolat->getImage()) . '" alt="product_image" />
+					<img class="product_img" src="images/products/' . htmlspecialchars($chocolat->getImage()) . '" alt="product_image" />
 				</div>
 				<h2><span class="wonka_font">' . htmlspecialchars($chocolat->getType()) . '</span> - ' . htmlspecialchars($chocolat->getNom()) . ' - ' . htmlspecialchars($chocolat->getMasse()) . 'g </h2>
 				<p class="product_price">' . htmlspecialchars($chocolat->getPrixKilo() * ($chocolat->getMasse() / 1000)) . '€</p>
@@ -27,7 +27,7 @@ foreach ($tab_chocolat as $chocolat) {
 		<article class="other_product_article">
 			<a href="index.php?controller=chocolat&action=read&id=' . rawurlencode($chocolat->getId()) . '">
 				<div class="image">
-					<img class="product_img" src="' . $chocolat->getImage() . '" alt="product_image" />
+					<img class="product_img" src="images/products/' . $chocolat->getImage() . '" alt="product_image" />
 				</div>
 				<h2><span class="wonka_font">' . htmlspecialchars($chocolat->getType()) . '</span> - ' . htmlspecialchars($chocolat->getNom()) . ' - ' . htmlspecialchars($chocolat->getMasse()) . 'g </h2>
 				<p class="product_price">' . htmlspecialchars($chocolat->getPrixKilo() * ($chocolat->getMasse() / 1000)) . '€</p>

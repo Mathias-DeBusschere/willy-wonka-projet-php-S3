@@ -137,6 +137,7 @@ class ControllerCart {
 	    );
 	    ModelContenu::save($dataContenu);
 	}
+	$_SESSION["cart"] = array();
 	ControllerCommande::readMine();
 	} else {
 		ControllerUtilisateur::connexion();

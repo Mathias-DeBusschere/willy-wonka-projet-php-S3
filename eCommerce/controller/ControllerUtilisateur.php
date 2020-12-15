@@ -5,14 +5,21 @@ class ControllerUtilisateur {
     protected static $object='utilisateur';
 
     public static function readAll() {
+       if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+
         $tab_utilisateurs = ModelUtilisateur::selectAll();
         $controller = 'utilisateur';
         $view = 'utilisateursgeneral';
         $pagetitle = 'Liste des utilisateur';
         require (File::build_path(array("view","view.php")));
+       } else {
+	       ControllerUtilisateur::connexion();
+       }
+
     }
 
     public static function read(){
+       if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
         $id = $_GET["id"];
 
         $utilisateur = ModelUtilisateur::select($id);
@@ -27,15 +34,23 @@ class ControllerUtilisateur {
             $controller='utilisateur';
             require File::build_path(array("view","view.php"));
         }
+       } else {
+	       ControllerUtilisateur::connexion();
+       }
     }
 
-    public static function delete($email) {
+    public static function delete() {
+       if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+	$id = $_GET["id"];
         ModelUtilisateur::delete($email);
         $controller = 'utilisateur';
         $view = 'deleted';
         $pagetitle = 'Utilisateur supprimé';
         $tab_u = ModelUtilisateur::selectAll();
         require (File::build_path(array("view","view.php")));
+       } else {
+	       ControllerUtilisateur::connexion();
+       }
     }
 
     public static function create() {

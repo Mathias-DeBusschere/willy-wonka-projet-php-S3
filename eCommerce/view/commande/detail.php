@@ -42,7 +42,7 @@
 		            <td></td>
 		            <td>';
 		            if(isset($total)){
-		            	echo "htmlspecialchars($total)}€";}
+		            	echo htmlspecialchars($total)."€";}
 		            echo '
 		            </td>
 		        </tr>

@@ -28,8 +28,9 @@
 	    ControllerUtilisateur::create();
             exit();
         } else {
-            if (empty($gender))
+            if (isset($_POST["other_gender"])) {
                 $gender = $other_gender;
+	    }
 
             $hashed_pwd = Security::hasher($pwd);
             $nonce = Security::generateRandomHex();

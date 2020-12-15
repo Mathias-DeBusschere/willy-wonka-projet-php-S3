@@ -2,7 +2,7 @@
 <section class="page_product">
 	<article class="product">
 		<div class="image">
-			<img class="product_img" src="<?php echo $c->getImage() ?>" alt="product_image" />
+			<img class="product_img" src="images/products/<?php echo $c->getImage() ?>" alt="product_image" />
 		</div>
 		<div class="details">
 			<h2><span class="wonka_font"><?php echo htmlspecialchars($c->getType()) ?></span> <?php echo htmlspecialchars($c->getMasse()) ?>g <?php echo htmlspecialchars($c->getNom()) ?></h2>

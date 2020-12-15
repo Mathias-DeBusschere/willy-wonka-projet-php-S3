@@ -75,18 +75,8 @@
                     <ul class="main_nav_links">
                         <li><a href="index.php" class="active">Accueil</a></li>
                         <li class="dropdown_menu_mobile"><label for="dropdown_menu_mobile" class="dropdown_menu_mobile">Chocolats</label>
-                            <ul class="main_nav_links dropdown_menu_mobile">
-                                <li class="black_choco"><a href="index.php?page=wip">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="index.php?page=wip">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="index.php?page=wip">Chocolat Blanc</a></li>
-                            </ul>
                         </li>
                         <li class="dropdown_menu"><a href="index.php?action=readAll&controller=chocolat" class="dropdown_menu">Chocolats</a>
-                            <ul class="main_nav_links dropdown_menu">
-                                <li class="black_choco"><a href="index.php?page=wip">Chocolat Noir</a></li>
-                                <li class="milk_choco"><a href="index.php?page=wip">Chocolat au Lait</a></li>
-                                <li class="white_choco"><a href="index.php?page=wip">Chocolat Blanc</a></li>
-                            </ul>
                         </li>
                         <li><a href="index.php?page=equipe">L'Équipe</a></li>
                         <li class="dropdown_menu_mobile2"><label for="dropdown_menu_mobile2" class="dropdown_menu_mobile2">Nous Rejoindre</label>

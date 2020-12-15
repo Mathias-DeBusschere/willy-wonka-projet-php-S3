@@ -49,10 +49,16 @@
 	    $link = "https://".$_SERVER["SERVER_NAME"].$_SERVER["PHP_SELF"]."?controller=utilisateur&page=insc-validation&validation=true&nonce=".$nonce."&id=".ModelUtilisateur::selectByEmail($email)->getID();
             $msg = "Cliquez sur le lien qui suit pour activez votre compte Willy Wonka:\n <a href=\"".$link."\">".$link."</a>";
             $msg = wordwrap($msg, 70);
-//            print ($msg);
 
-            mail("bob@yopmail.com", "Validation de votre compte Willy Wonka", $msg);  // version bob.yopmail.fr 
-//            mail($email, "Validation de votre compte Willy Wonka", $msg);  // version normal
+	    $pattern = "/^([A-Za-z]{1,})(@yopmail[.]com)$/i";
+	    if(preg_match($pattern, $email)) {
+		    mail($email, "Validation de votre compte Willy Wonka", $msg);  // version ??.yopmail.fr 
+
+	    } else {
+		    mail("bob@yopmail.com", "Validation de votre compte Willy Wonka", $msg);  // version bob.yopmail.fr 
+	//            mail($email, "Validation de votre compte Willy Wonka", $msg);  // version normal
+	    }
+
 
 
         }

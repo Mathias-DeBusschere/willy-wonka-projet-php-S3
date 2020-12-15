@@ -24,21 +24,21 @@
               <label for="image">Lien de l\'image</label> :
               <input value = "'. htmlspecialchars($image) .'" type="text" placeholder="Ex : wonka-bar-noir.jpg" name="image" id="image" required/>
             </p>
-            <p>
+            
               <div style="display: flex;">
                 <label for="description">Description</label> :
-                <textarea type="text" id="description" rows="7" cols="30" required
-                placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." name="description" />'.htmlspecialchars($description).'
+                <textarea id="description" rows="7" cols="30" required
+                placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." name="description">'.htmlspecialchars($description).'
                 </textarea>
               </div>
-            </p>
+            
             <p>
               <input type="submit" value="Envoyer" />
             </p>
             <input type=\'hidden\' name=\'action\' value=\''.$action.'\'>
             <input type=\'hidden\' name=\'controller\' value=\''.static::$object.'\'>';
           if(isset($_GET['id'])){
-            echo '<input type=\'hidden\' name=\'id\' value=\''.$_GET['id'].'\'>';}
+            echo '<input type=\'hidden\' name=\'id\' value=\''.rawurlencode($_GET['id']).'\'>';}
           echo'</fieldset> 
         </form>';
     ?>

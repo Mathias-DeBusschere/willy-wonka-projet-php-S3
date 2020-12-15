@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title><?php 
-        echo $pagetitle; ?></title>
+        <title><?php echo $pagetitle; ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

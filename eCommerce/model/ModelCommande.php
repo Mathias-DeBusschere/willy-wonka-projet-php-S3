@@ -32,12 +32,15 @@
       $table_name = 'p_contenu';
       $class_name = 'ModelContenu';
       
-      $sql = 'SELECT * FROM p_contenu WHERE idCommande=:nom_tag ORDER BY idCommande';
+      $sql = 'SELECT p_chocolat.id, type, p_chocolat.nom, quantite, prixkilo, masse FROM p_commande
+              JOIN p_contenu ON p_commande.id=p_contenu.idCommande  
+              JOIN p_chocolat ON p_contenu.idProduit=p_chocolat.id 
+              WHERE idCommande =:nom_tag';
       try{
             $req_prep = Model::$pdo->prepare($sql);
             $values = array("nom_tag" => $idCommande);
             $req_prep->execute($values);
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'ModelContenu');
+            $req_prep->setFetchMode(PDO::FETCH_ASSOC);
             $tab_object = $req_prep->fetchAll();
         } catch(PDOException $e) {
             echo $e->getMessage();

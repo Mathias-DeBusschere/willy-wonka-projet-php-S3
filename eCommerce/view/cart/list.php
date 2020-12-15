@@ -50,7 +50,7 @@
 		        </tr>
 			</tbody>
 		</table>';
-            echo "</br><p><a style=\"color: gray\" href=\"index.php?controller=cart&action=emptyCart\">vider le panier</a></p>";
+            echo "<p><a style=\"color: gray\" href=\"index.php?controller=cart&action=emptyCart\">vider le panier</a></p>";
         } else {
             echo "<h2>Votre panier est vide pour le moment.</h2>
             <p>Votre panier est là pour vous servir. Donnez-lui un but: remplissez le de chocolats.</p>

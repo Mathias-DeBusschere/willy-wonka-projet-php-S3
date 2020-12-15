@@ -1,4 +1,3 @@
-
 			<h1 id="top_page_title">Inscription</h1>
 			<div class="beige_bg form_container">
 				<h2>Créer ton compte avec ton pseudo</h2>
@@ -11,13 +10,13 @@
                         <fieldset class="type_field">
                             <label>
                                 <img src="images/connexion/user-icon.png" alt="user_icon" />
-                                <input type="text" name="prenom" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields")? ((empty($prenom))? "class=\"error\"" : ""): "") : "");?> placeholder="Prenom" value="<?php echo ((isset($_POST["prenom"]))? $_POST["prenom"]: "");?>" maxlength="32" required />
+                                <input type="text" name="prenom" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields")? ((empty($prenom))? "class=\"error\"" : ""): "") : "");?> placeholder="Prenom" value="<?php echo ((isset($_POST["prenom"]))? htmlspecialchars($_POST["prenom"]): "");?>" maxlength="32" required />
                             </label>
                         </fieldset>
                         <fieldset class="type_field">
                             <label>
                                 <img src="images/connexion/user-icon.png" alt="user_icon" />
-                                <input type="text" name="nom" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields")? ((empty($nom))? "class=\"error\"" : ""): "") : "");?> placeholder="Nom" value="<?php echo ((isset($_POST["nom"]))? $_POST["nom"]: "");?>"  maxlength="32" required />
+                                <input type="text" name="nom" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields")? ((empty($nom))? "class=\"error\"" : ""): "") : "");?> placeholder="Nom" value="<?php echo ((isset($_POST["nom"]))? htmlspecialchars($_POST["nom"]): "");?>"  maxlength="32" required />
                             </label>
                         </fieldset>
                     </div>
@@ -40,14 +39,14 @@
                             </div>
                             <div>
                                 <input type="radio" id="other" name="gender" value="other" <?php echo (isset($_POST["other_gender"])? "checked":""); ?> required>
-                                <label for="other"><input type="text" name="other_gender" placeholder="autre" value="<?php echo ((isset($_POST["other_gender"]))? $_POST["other_gender"]: "");?>" maxlength="32"></label>
+                                <label for="other"><input type="text" name="other_gender" placeholder="autre" value="<?php echo ((isset($_POST["other_gender"]))? htmlspecialchars($_POST["other_gender"]): "");?>" maxlength="32"></label>
                             </div>
                         </div>
                     </fieldset>
 					<fieldset class="type_field">
 						<label>
 							<img src="images/connexion/email-icon.png" alt="email_icon" />
-							<input type="email" name="email" <?php echo (isset($_POST["email"])? (($_POST["error"]=="emptyFields")? ((empty($email))? "class=\"error\"": ""):(($_POST["error"]!="passwordRepeat")? "class=\"error\"" : "" )) : "" ) ?> placeholder="Email" value="<?php echo ((isset($_POST["email"]))? $_POST["email"]: "");?>" maxlength="64" required />
+							<input type="email" name="email" <?php echo (isset($_POST["email"])? (($_POST["error"]=="emptyFields")? ((empty($email))? "class=\"error\"": ""):(($_POST["error"]!="passwordRepeat")? "class=\"error\"" : "" )) : "" ) ?> placeholder="Email" value="<?php echo ((isset($_POST["email"]))? htmlspecialchars($_POST["email"]): "");?>" maxlength="64" required />
 						</label>
 					</fieldset>
 					<fieldset class="type_field">

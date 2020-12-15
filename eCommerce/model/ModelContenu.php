@@ -85,7 +85,7 @@
 
     $sql =  "UPDATE $table_name SET ";
     foreach ($data as $cle => $valeur) 
-        $sql = $sql . $cle .'=\''.$valeur.'\', ';
+        $sql = $sql . $cle .'=:'.$cle.', ';
     $sql = rtrim($sql," \t,") ." WHERE $primary_key1 ='$data[$primary_key1]' AND $primary_key2 ='$data[$primary_key2]';";
     try{
     $req_prep = Model::$pdo->prepare($sql);  

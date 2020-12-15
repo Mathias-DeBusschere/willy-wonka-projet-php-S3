@@ -2,7 +2,13 @@
 	<article class="other_product_article" style="width:100%">
 		<?php 
 		$tab_contenu = ModelCommande::selectAllContenu($commande->getId());
-		echo '<p style="padding: 20px;">Commande N°'.htmlspecialchars($commande->getId()).'     -    '.htmlspecialchars(ModelUtilisateur::select($commande->getIdUtilisateur())->getNom()).','.htmlspecialchars(ModelUtilisateur::select($commande->getIdUtilisateur())->getPrenom()).'</p>
+		if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
+			echo '<p style="padding: 20px;">Commande N°'.htmlspecialchars($commande->getId()).'     -    '.htmlspecialchars(ModelUtilisateur::select($commande->getIdUtilisateur())->getNom()).','.htmlspecialchars(ModelUtilisateur::select($commande->getIdUtilisateur())->getPrenom()).'</p>';
+		}else{//si pas admin il est forcément dans Mes commandes donc on peut afficher ses infos sans faire de requêtes.
+			echo '<p style="padding: 20px;">Commande N°'.htmlspecialchars($commande->getId()).'     -    '.htmlspecialchars($_SESSION["nom"]).', '.htmlspecialchars($_SESSION["prenom"]).'</p>';
+		}
+
+		echo'
 		<table style ="width: 100%; text-align: center;">
     		<thead>
 		        <tr>
@@ -17,19 +23,19 @@
 		if($tab_contenu != null){
 			$total=0;
 		foreach ($tab_contenu as $contenu){
-			$total =$total + $contenu->getQuantite()*ModelChocolat::select($contenu->getIdProduit())->getPrixKilo()*ModelChocolat::select($contenu->getIdProduit())->getMasse()/1000;
+			$total =$total + $contenu['quantite']*$contenu['prixkilo']*$contenu['masse']/1000;
 		echo '
 		        <tr>
-		            <td><a style="color: grey"  href="index.php?controller=chocolat&action=read&id='.rawurlencode($contenu->getIdProduit()).'">'.htmlspecialchars(ModelChocolat::select($contenu->getIdProduit())->getType()).' '.htmlspecialchars(ModelChocolat::select($contenu->getIdProduit())->getNom()).'</a></td>
-		            <td>'.htmlspecialchars($contenu->getQuantite()).'</td>
-		            <td>'.htmlspecialchars(ModelChocolat::select($contenu->getIdProduit())->getPrixKilo()*ModelChocolat::select($contenu->getIdProduit())->getMasse()/1000).'€</td>
-		            <td>'.htmlspecialchars($contenu->getQuantite()*ModelChocolat::select($contenu->getIdProduit())->getPrixKilo()*ModelChocolat::select($contenu->getIdProduit())->getMasse()/1000).'€</td>
+		            <td><a style="color: grey"  href="index.php?controller=chocolat&action=read&id='.rawurlencode($contenu['id']).'">'.htmlspecialchars($contenu['type']).' '.htmlspecialchars($contenu['nom']).'</a></td>
+		            <td>'.htmlspecialchars($contenu['quantite']).'</td>
+		            <td>'.htmlspecialchars($contenu['prixkilo']*$contenu['masse']/1000).'€</td>
+		            <td>'.htmlspecialchars($contenu['quantite']*$contenu['prixkilo']*$contenu['masse']/1000).'€</td>
 		            <td>';
 
 		            if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
 		            	echo'
-		            	<a href="index.php?controller=contenu&action=update&idCommande='.rawurlencode($contenu->getIdCommande()).'&idProduit='.rawurlencode($contenu->getIdProduit()).'"><img src="images/header/settings.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>
-		            	<a href="index.php?controller=contenu&action=delete&idCommande='.rawurlencode($contenu->getIdCommande()).'&idProduit='.rawurlencode($contenu->getIdProduit()).'"><img src="images/header/delete.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>';
+		            	<a href="index.php?controller=contenu&action=update&idCommande='.rawurlencode($commande->getId()).'&idProduit='.rawurlencode($contenu['id']).'"><img src="images/header/settings.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>
+		            	<a href="index.php?controller=contenu&action=delete&idCommande='.rawurlencode($commande->getId()).'&idProduit='.rawurlencode($contenu['id']).'"><img src="images/header/delete.png" alt="delete" style="width: 30px;height: 30px;background-color: #888A8588;border-radius: 100%;justify-content: space-around;align-items: center;"></a>';
 		            }
 		        echo '</tr>';}
 		}else{

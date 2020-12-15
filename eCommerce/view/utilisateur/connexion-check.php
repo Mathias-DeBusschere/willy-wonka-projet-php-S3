@@ -17,10 +17,13 @@
 	    ControllerUtilisateur::connexion();
             exit();
         } else if (ModelUtilisateur::checkPassword($email,$hashedPwd)){
-		if (is_null(ModelUtilisateur::selectByEmail($email)->getNonce())) {
-		    $_SESSION['idUser'] = ModelUtilisateur::selectByEmail($email)->getId();
+		$user = ModelUtilisateur::selectByEmail($email);
+		if (is_null($user->getNonce())) {
+		    $_SESSION['idUser'] = $user->getId();
 		    $_SESSION['emailUser'] = $email;
-		    $_SESSION['isAdmin'] = ModelUtilisateur::selectByEmail($email)->getAdmin();
+		    $_SESSION['isAdmin'] = $user->getAdmin();
+		    $_SESSION['nom'] = $user->getNom();
+		    $_SESSION['prenom'] = $user->getPrenom();
 		    
 		    if (isset($_POST["remember_me"]) && $_POST["remember_me"] == "on") {
 			$_SESSION['stayLogged'] = 'on';

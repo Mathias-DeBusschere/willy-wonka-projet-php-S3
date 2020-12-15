@@ -54,50 +54,74 @@ class ControllerUtilisateur {
     }
 
     public static function create() {
-        $controller = 'utilisateur';
-        $view = 'inscription';
-        $pagetitle = 'Créer utilisateur';
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		$controller = 'utilisateur';
+		$view = 'inscription';
+		$pagetitle = 'Créer utilisateur';
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function creating() {
-        $controller = 'utilisateur';
-        $view = 'inscription';
-        $pagetitle = 'Créer utilisateur';
-        require (File::build_path(array("view","utilisateur","insc-check.php")));
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		$controller = 'utilisateur';
+		$view = 'inscription';
+		$pagetitle = 'Créer utilisateur';
+		require (File::build_path(array("view","utilisateur","insc-check.php")));
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function created($data) {
-        ModelUtilisateur::save($data);
-        $controller = 'utilisateur';
-        $view = 'insc-validation';
-        $pagetitle = 'Inscription complète';
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		ModelUtilisateur::save($data);
+		$controller = 'utilisateur';
+		$view = 'insc-validation';
+		$pagetitle = 'Inscription complète';
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function connexion() {
-        $controller = 'utilisateur';
-        $view = 'connexion';
-        $pagetitle = 'Connexion';
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		$controller = 'utilisateur';
+		$view = 'connexion';
+		$pagetitle = 'Connexion';
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function connecting() {
-        $controller = 'utilisateur';
-        $view = 'connexion';
-        $pagetitle = 'Connexion';
-        require (File::build_path(array("view","utilisateur","connexion-check.php")));
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		$controller = 'utilisateur';
+		$view = 'connexion';
+		$pagetitle = 'Connexion';
+		require (File::build_path(array("view","utilisateur","connexion-check.php")));
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function connected() {
-        require (File::build_path(array("view","view.php")));
+	    if (!isset($_SESSION["idUser"])) {
+		require (File::build_path(array("view","view.php")));
+	    } else {
+		    header ("Location: index.php");
+	    }
     }
 
     public static function deconnexion() {
-        require (File::build_path(array("view","utilisateur","deconnexion.php")));
-        require (File::build_path(array("view","view.php")));
+	require (File::build_path(array("view","utilisateur","deconnexion.php")));
+	require (File::build_path(array("view","view.php")));
     }
 
 

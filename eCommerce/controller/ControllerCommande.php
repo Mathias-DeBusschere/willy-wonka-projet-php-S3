@@ -32,26 +32,30 @@ class ControllerCommande {
     }
 
     public static function read(){
-        if(isset($_GET['id'])){
-            $c = $_GET['id'];
-            $commande = ModelCommande::select($c);
-            if ($commande == null){
-                $controller='error';
-                $view='errorgeneral';
-                $pagetitle='Oups :(';
-                require File::build_path(array("view","view.php"));
-            }else{
-                $view='detail';
-                $pagetitle='Détails commande';
-                $controller='commande';
-                require File::build_path(array("view","view.php"));
-            }
-        }else{
-            $controller='error';
-            $view='errorgeneral';
-            $pagetitle='Oups :(';
-            require File::build_path(array("view","view.php"));
-        }
+	if(isset($_GET['id'])){
+		$c = $_GET['id'];
+		$commande = ModelCommande::select($c);
+		    if ($commande == null){
+			$controller='error';
+			$view='errorgeneral';
+			$pagetitle='Oups :(';
+			require File::build_path(array("view","view.php"));
+		    }else{
+			if ((isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) || $_SESSION['idUser'] == $commande->getIdUtilisateur()) {
+				$view='detail';
+				$pagetitle='Détails commande';
+				$controller='commande';
+				require File::build_path(array("view","view.php"));
+			}else{
+			    ControllerCommande::readMine();
+			}
+		    }
+	}else{
+	    $controller='error';
+	    $view='errorgeneral';
+	    $pagetitle='Oups :(';
+	    require File::build_path(array("view","view.php"));
+	}
         
     }
 

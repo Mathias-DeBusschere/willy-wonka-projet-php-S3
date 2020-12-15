@@ -121,24 +121,23 @@ class ControllerCart {
 
     public static function payer() {
 	if (isset($_SESSION["idUser"])) {
+		$dataCommande = array(
+		    "idUtilisateur" => $_SESSION["idUser"]);
 
-	$dataCommande = array(
-	    "idUtilisateur" => $_SESSION["idUser"]);
+		ModelCommande::save($dataCommande);
 
-	ModelCommande::save($dataCommande);
+		$idCommande = Model::$pdo->lastInsertId();
 
-	$idCommande = Model::$pdo->lastInsertId();
-
-	foreach ($_SESSION["cart"] as $item) {
-	    $dataContenu = array(
-		"idCommande" => $idCommande,
-		"idProduit" => $item["id"],
-		"quantite" => $item["quantity"]
-	    );
-	    ModelContenu::save($dataContenu);
-	}
-	$_SESSION["cart"] = array();
-	ControllerCommande::readMine();
+		foreach ($_SESSION["cart"] as $item) {
+		    $dataContenu = array(
+			"idCommande" => $idCommande,
+			"idProduit" => $item["id"],
+			"quantite" => $item["quantity"]
+		    );
+		    ModelContenu::save($dataContenu);
+		}
+		$_SESSION["cart"] = array();
+		ControllerCommande::readMine();
 	} else {
 		ControllerUtilisateur::connexion();
 	}

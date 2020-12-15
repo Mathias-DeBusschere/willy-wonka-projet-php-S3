@@ -9,7 +9,7 @@
         <fieldset class="type_field">
 			<label>
 				<img src="images/connexion/user-icon.png" alt="user_icon" />
-				<input type="email" name="email" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields" && !empty($email))? "" : "class=\"error\""): "");?> placeholder="Email" id="email" value="<?php echo (isset($_POST["email"])? $_POST["email"] : "")?>" required/>
+				<input type="email" name="email" <?php echo ((isset($_POST["error"]))? (($_POST["error"]=="emptyFields" && !empty($email))? "" : "class=\"error\""): "");?> placeholder="Email" id="email" value="<?php echo (isset($_POST["email"])? htmlspecialchars($_POST["email"]) : "")?>" required/>
 			</label>
 		</fieldset>
 		<fieldset class="type_field">

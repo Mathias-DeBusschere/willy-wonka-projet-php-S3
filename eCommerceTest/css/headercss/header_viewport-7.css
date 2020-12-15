@@ -1,3 +1,0 @@
-input[type="checkbox"]:checked ~ .menu_overlay {
-	animation: animDown 1s forwards alternate;
-}

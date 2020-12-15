@@ -1,1 +1,0 @@
-Une erreur est survenue. Retournez à la page d'accueil : <a href="index.php"> ICI</a>

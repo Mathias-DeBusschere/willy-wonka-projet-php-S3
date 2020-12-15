@@ -33,7 +33,7 @@ class ControllerChocolat {
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
             $id = $_GET['id'];
             ModelChocolat::delete($id);
-            ControllerChocolat::readAll();
+	    header("Location: index.php?action=readAll&controller=chocolat");	
         } else {
             ControllerChocolat::readAll();
         }
@@ -71,7 +71,7 @@ class ControllerChocolat {
 
             ModelChocolat::save($data);
 
-            ControllerChocolat::readAll();
+	    header("Location: index.php?action=readAll&controller=chocolat");	
         } else {
             ControllerChocolat::readAll();
         }
@@ -79,21 +79,29 @@ class ControllerChocolat {
 
     public static function update(){
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
-            $id = $_GET['id'];
-            $type = ModelChocolat::select($id)->getType();
-            $nom = ModelChocolat::select($id)->getNom();
-            $prixkilo = ModelChocolat::select($id)->getPrixKilo();
-            $masse = ModelChocolat::select($id)->getMasse();
-            $image = ModelChocolat::select($id)->getImage();
-            $description = ModelChocolat::select($id)->getDescription();
+		if(isset($_GET["id"]) && !empty($_GET["id"])) {
+		    $id = $_GET['id'];
+			$c = ModelChocolat::select($id);
+		    $type = $c->getType();
+		    $nom = $c->getNom();
+		    $prixkilo = $c->getPrixKilo();
+		    $masse = $c->getMasse();
+		    $image = $c->getImage();
+		    $description = $c->getDescription();
 
-            $restriction='readonly';
-            $action='updated';
+		    $restriction='readonly';
+		    $action='updated';
 
-            $view='update';
-            $pagetitle='Modification Chocolat';
-            $controller='chocolat';
-            require File::build_path(array("view","view.php"));
+		    $view='update';
+		    $pagetitle='Modification Chocolat';
+		    $controller='chocolat';
+		    require File::build_path(array("view","view.php"));
+		} else {
+		    $pagetitle="Oups :/";
+ 		    $view="erroraction";
+		    $controller="error";
+		    require File::build_path(array("view","view.php"));
+		}
         } else {
             ControllerChocolat::readAll();
         }
@@ -114,7 +122,7 @@ class ControllerChocolat {
             "description" => $_GET['description']);
             $chocolat->update($data);
 
-            ControllerChocolat::readAll();
+	    header("Location: index.php?action=readAll&controller=chocolat");	
         } else {
             ControllerChocolat::readAll();
         }

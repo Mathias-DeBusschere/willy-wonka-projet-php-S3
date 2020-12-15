@@ -21,8 +21,8 @@ class ControllerContenu {
             $idCommande = $_GET['idCommande'];
             $idProduit = $_GET['idProduit'];
             ModelContenu::deleteContenu($idCommande,$idProduit);
-            ControllerContenu::readAll();}
-        else{
+	    header("Location: index.php?action=readAll&controller=contenu");	
+	}else{
             ControllerCommande::readMine();
         }
     }
@@ -55,8 +55,8 @@ class ControllerContenu {
             "quantite" => $quantite);
             $contenu = new ModelContenu($idCommande,$idProduit,$quantite);
             $contenu->save($data);
-            ControllerContenu::readAll();}
-        else{
+	    header("Location: index.php?action=readAll&controller=contenu");	
+	}else{
             ControllerCommande::readMine();
         }
     }
@@ -88,8 +88,8 @@ class ControllerContenu {
             "idProduit" => $idProduit,
             "quantite" => $_GET['quantite']);
             $contenu->update($data);
-            ControllerContenu::readAll();}
-            else{
+	    header("Location: index.php?action=readAll&controller=contenu");	
+	}else{
             ControllerCommande::readMine();
         }
     }  

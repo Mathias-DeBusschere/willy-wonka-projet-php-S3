@@ -36,12 +36,7 @@ class ControllerCart {
             $_SESSION["cartSize"] += 1;
         }
 
-
-        $pagetitle = 'Panier';
-        $controller='cart';
-        $view='list';
-        require File::build_path(array("view","view.php"));
-
+	header("Location: index.php?action=showCart&controller=cart");	
     }
 
     public static function deleteFromCart() {
@@ -64,10 +59,7 @@ class ControllerCart {
         }
 
 
-        $pagetitle = 'Panier';
-        $controller='cart';
-        $view='list';
-        require File::build_path(array("view","view.php"));
+	header("Location: index.php?action=showCart&controller=cart");	
     }
 
     public static function addOne() {
@@ -78,11 +70,7 @@ class ControllerCart {
             }
 
         }
-
-        $pagetitle = 'Panier';
-        $controller='cart';
-        $view='list';
-        require File::build_path(array("view","view.php"));
+	header("Location: index.php?action=showCart&controller=cart");	
     }
 
     public static function minusOne() {
@@ -104,19 +92,13 @@ class ControllerCart {
             $_SESSION['cart'] = array();
         }
 
-        $pagetitle = 'Panier';
-        $controller='cart';
-        $view='list';
-        require File::build_path(array("view","view.php"));
+	header("Location: index.php?action=showCart&controller=cart");	
     }
 
     public static function emptyCart() {
         $_SESSION['cart'] = array();
 
-        $pagetitle = 'Panier';
-        $controller='cart';
-        $view='list';
-        require File::build_path(array("view","view.php"));
+	header("Location: index.php?action=showCart&controller=cart");	
     }
 
     public static function payer() {
@@ -137,7 +119,7 @@ class ControllerCart {
 		    ModelContenu::save($dataContenu);
 		}
 		$_SESSION["cart"] = array();
-		ControllerCommande::readMine();
+		header("Location: index.php?action=readMine&controller=commande");
 	} else {
 		ControllerUtilisateur::connexion();
 	}

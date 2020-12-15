@@ -63,8 +63,8 @@ class ControllerCommande {
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 0) {
             $id = $_GET['id'];
             ModelCommande::delete($id);
-            ControllerCommande::readAll();}
-        else{
+	    header("Location: index.php?action=readAll&controller=commande");	
+	}else{
             ControllerCommande::readMine();
         }
     }
@@ -78,8 +78,8 @@ class ControllerCommande {
             $view='update';
             $pagetitle='Création commande';
             $controller='commande';
-            require File::build_path(array("view","view.php"));}
-        else{
+            require File::build_path(array("view","view.php"));
+	}else{
             ControllerChocolat::readAll();
         }
     }
@@ -92,8 +92,8 @@ class ControllerCommande {
                 "id" => 'null',
                 "idUtilisateur" => $idUtilisateur);
             ModelCommande::save($data);
-            ControllerCommande::readAll();}
-        else{
+	    header("Location: index.php?action=readAll&controller=commande");	
+	}else{
             ControllerCommande::readMine();
         }
     }

@@ -125,20 +125,5 @@ class ControllerUtilisateur {
     }
 
 
-//    public static function update($email) {
-//        $controller = 'utilisateur';
-//        $view = 'update';
-//        $pagetitle = 'Mise à jour de l\'utilisateur';
-//        $tab_v = ModelUtilisateur::select($email);
-//        require (File::build_path(array("view","view.php")));
-//    }
-//
-//    public static function updated() {
-//        ModelVoiture::update(....);
-//        $controller = 'utilisateur';
-//        $view = 'updated';
-//        $tab_v = ModelUtilisateur::select($_GET['immatriculation']);
-//        require (File::build_path(array("view","view.php")));
-//    }
 }
 ?>

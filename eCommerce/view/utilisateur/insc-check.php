@@ -28,7 +28,7 @@
 	    ControllerUtilisateur::create();
             exit();
         } else {
-            if (isset($_POST["other_gender"])) {
+            if (isset($_POST["other_gender"]) && !empty($_POST['other_gender'])) {
                 $gender = $other_gender;
 	    }
 
@@ -69,3 +69,4 @@
     }
 
 ?>
+
